@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Routines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div>
+        <h1 class="app__title">Routines</h1>
+        <p class="app__date" id="todayLabel"></p>
+      </div>
+      <div class="app__progress" aria-live="polite">
+        <svg class="ring" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+          <circle class="ring__track" cx="32" cy="32" r="28" />
+          <circle class="ring__fill" id="ringFill" cx="32" cy="32" r="28" />
+        </svg>
+        <span class="app__progress-label" id="progressLabel">0/0</span>
+      </div>
+    </header>
+
+    <form class="add" id="addForm" autocomplete="off">
+      <input
+        class="add__name"
+        id="nameInput"
+        type="text"
+        placeholder="Add a routine (e.g. Morning walk)"
+        maxlength="80"
+        required
+      />
+      <select class="add__slot" id="slotInput" aria-label="Time of day">
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+        <option value="anytime" selected>Anytime</option>
+      </select>
+      <button class="add__btn" type="submit">Add</button>
+    </form>
+
+    <nav class="filters" id="filters" aria-label="Filter by time of day">
+      <button class="filters__btn is-active" data-filter="all" type="button">All</button>
+      <button class="filters__btn" data-filter="morning" type="button">Morning</button>
+      <button class="filters__btn" data-filter="afternoon" type="button">Afternoon</button>
+      <button class="filters__btn" data-filter="evening" type="button">Evening</button>
+      <button class="filters__btn" data-filter="anytime" type="button">Anytime</button>
+    </nav>
+
+    <ul class="list" id="list"></ul>
+
+    <p class="empty" id="empty" hidden>No routines yet. Add one above to get started.</p>
+
+    <footer class="app__footer">
+      <span id="streakSummary"></span>
+      <button class="link" id="resetDay" type="button">Reset today</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
