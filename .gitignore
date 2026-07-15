@@ -1,0 +1,19 @@
+# Claves y secretos
+.env
+*.key
+
+# Salidas generadas
+salidas/
+*.csv
+*.json
+!requirements*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Sistema
+.DS_Store
