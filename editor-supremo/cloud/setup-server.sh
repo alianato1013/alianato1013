@@ -81,6 +81,7 @@ python3 -m venv .venv
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install piper-tts
+python -m pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
 ( cd remotion-composer && npm install && (npx --yes remotion browser ensure || true) )
 [[ -f .env ]] || cp .env.example .env
 grep -q 'activate' ~/.bashrc || echo 'cd ~/OpenMontage && . .venv/bin/activate' >> ~/.bashrc
@@ -91,7 +92,8 @@ else
   git clone --branch "$REPO_BRANCH" "$REPO_URL" ~/alianato1013
 fi
 bash ~/alianato1013/editor-supremo/install.sh ~/OpenMontage
-mkdir -p ~/guiones
+mkdir -p ~/guiones ~/.config/editor-supremo/youtube
+chmod 700 ~/.config/editor-supremo ~/.config/editor-supremo/youtube
 EOF
 
 echo

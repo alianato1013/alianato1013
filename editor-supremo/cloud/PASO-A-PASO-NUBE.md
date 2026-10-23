@@ -142,10 +142,10 @@ claude
    - **limpia el servidor**;
    - te da el enlace.
 
-## Paso 8: Subir a YouTube
+## Paso 8: Subir a YouTube directo desde la nube
 
-- **Hoy:** abre el video en Google Drive (se reproduce en streaming, sin descargarse). Para subirlo, YouTube Studio pide el archivo desde tu equipo: **descárgalo, súbelo y bórralo enseguida**. Ocupa espacio solo unos minutos.
-- **Lo ideal (te lo puedo construir):** un subidor en el servidor que use la API oficial de YouTube. Sube el video **directo desde la nube** como privado con fecha programada, con título, descripción, capítulos y miniatura. **Tu PC nunca toca el archivo.** Requiere crear una vez un proyecto en Google Cloud con la API de YouTube (gratis).
+Sigue **`YOUTUBE-API-PASO-A-PASO.md`** (una sola vez, gratis, ~30 min). A partir de ahí le dices al editor:
+*"Sube a YouTube, programado para el lunes a las 10 a. m. hora del Este"*. El servidor sube el video (privado + programado), pone la miniatura, lo guarda en Drive y se limpia. **Tu PC nunca toca el archivo.**
 
 ---
 

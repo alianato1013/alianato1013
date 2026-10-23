@@ -94,6 +94,11 @@ Enabled. Lora 600, white on a semi-transparent dark box, bottom center, max 7 wo
   edited by our team. Historical household practices for general education, not financial advice."
 - Mark "Altered or synthetic content" in YouTube Studio when photorealistic AI images of historical scenes are used.
 
+- **youtube_upload.json** (cloud upload): `category_id` "27" (Education); `privacy` "private"; `publish_at` = the date/time the
+  user gives, converted to UTC (if none, upload private without a date and tell the user); `made_for_kids` false;
+  `contains_synthetic_media` true when photorealistic AI images are used, otherwise false; `thumbnail` = the approved
+  thumbnail file; `default_language` "en". The channel code for this bible is **HTH**.
+
 ## 12. Stage checklist (re-read before each stage)
 | Stage | Re-read sections |
 |---|---|

@@ -95,6 +95,11 @@ Never cover quote cards or the object.
   published scholarly editions; interpretations are labeled as such."
 - Mark "Altered or synthetic content" when realistic AI scenes are used.
 
+- **youtube_upload.json** (cloud upload): `category_id` "27" (Education); `privacy` "private"; `publish_at` = the date/time the
+  user gives, converted to UTC (if none, upload private without a date and tell the user); `made_for_kids` false;
+  `contains_synthetic_media` true when photorealistic AI images are used, otherwise false; `thumbnail` = the approved
+  thumbnail file; `default_language` "en". The channel code for this bible is **SV**.
+
 ## 12. Stage checklist
 | Stage | Re-read sections |
 |---|---|

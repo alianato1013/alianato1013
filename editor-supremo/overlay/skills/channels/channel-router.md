@@ -38,7 +38,13 @@ locked voice (or "voice not locked yet — will ask once"), visual sourcing orde
 audit minimum score. Then continue with the pipeline's first stage.
 
 ### Step 4 — Run the pipeline
-`proposal → script → scene_plan → assets → edit (+storyboard_audit) → compose (+render_audit) → publish → deliver`.
+`proposal → script → scene_plan → assets → edit (+storyboard_audit) → compose (+render_audit) → publish → upload → deliver`.
+
+**Upload** (only after the user explicitly says "sube a YouTube"): write `projects/<id>/youtube_upload.json`
+(title, description with chapters and credits, tags, `category_id`, `privacy` private, optional `publish_at` in UTC,
+`made_for_kids` false, `contains_synthetic_media` per the bible, `thumbnail`), show it to the user, then run
+`python scripts/channel_cloud/youtube_upload.py upload --project projects/<id>` (try `--dry-run` first).
+Never upload to a channel other than the project's; the script checks the channel id.
 
 **Deliver** (after the publish gate is approved): `bash scripts/channel_cloud/deliver.sh <project-id>`.
 It uploads to `gdrive:YouTube/<Channel>/<project-id>/`, verifies the copy, frees the server disk and

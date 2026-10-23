@@ -94,6 +94,11 @@ Never cover depth labels or the highlighted layer.
   illustrations; AI-assisted where noted."
 - Mark "Altered or synthetic content" when realistic AI reconstructions are used.
 
+- **youtube_upload.json** (cloud upload): `category_id` "27" (Education); `privacy` "private"; `publish_at` = the date/time the
+  user gives, converted to UTC (if none, upload private without a date and tell the user); `made_for_kids` false;
+  `contains_synthetic_media` true when photorealistic AI images are used, otherwise false; `thumbnail` = the approved
+  thumbnail file; `default_language` "en". The channel code for this bible is **BA**.
+
 ## 12. Stage checklist
 | Stage | Re-read sections |
 |---|---|

@@ -19,7 +19,12 @@ over a script "for my channel".
   (`skills/channels/visual-auditor.md`) must PASS on the timeline AND on the final render
   before anything is delivered.
 - If something is not defined in the bible and it matters: ask. Do not assume.
-- **Delivery (cloud server):** after the publish gate is approved, run
+- **YouTube upload (cloud server):** after the publish gate is approved, write
+  `projects/<id>/youtube_upload.json` from the bible's Publishing section, show it to the user, and
+  run `python scripts/channel_cloud/youtube_upload.py upload --project projects/<id>` ONLY after the user
+  says to upload ("sube a YouTube"). Default privacy: private, with `publish_at` if the user gave a date.
+  It refuses to upload unless the render audit is PASS and the authorized channel matches the project.
+- **Delivery (cloud server):** after the upload (or when the user says not to upload), run
   `bash scripts/channel_cloud/deliver.sh <project-id>`. It uploads the video and its package to
   cloud storage, verifies the copy and frees the server disk. It refuses to run unless the render
   audit is PASS. Never leave a finished video only on the server, and never delete a project
