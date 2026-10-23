@@ -21,6 +21,8 @@
 | `overlay/skills/channels/` | Las instrucciones del enrutador, la propuesta, el bloqueo del guion y el auditor |
 | `overlay/scripts/channel_audit/audit.py` | La herramienta que empareja cada frase con su imagen y verifica las notas |
 | `install.ps1` / `install.sh` | Instaladores para Windows / Mac y Linux |
+| `cloud/PASO-A-PASO-NUBE.md` | **Producir en un servidor en la nube** sin llenar tu PC (guía + `cloud/setup-server.sh`) |
+| `overlay/scripts/channel_cloud/deliver.sh` | Sube el video terminado a Google Drive, verifica la copia y limpia el servidor |
 
 ---
 

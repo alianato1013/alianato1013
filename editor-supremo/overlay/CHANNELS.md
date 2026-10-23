@@ -19,6 +19,11 @@ over a script "for my channel".
   (`skills/channels/visual-auditor.md`) must PASS on the timeline AND on the final render
   before anything is delivered.
 - If something is not defined in the bible and it matters: ask. Do not assume.
+- **Delivery (cloud server):** after the publish gate is approved, run
+  `bash scripts/channel_cloud/deliver.sh <project-id>`. It uploads the video and its package to
+  cloud storage, verifies the copy and frees the server disk. It refuses to run unless the render
+  audit is PASS. Never leave a finished video only on the server, and never delete a project
+  that has no `DELIVERED.txt`.
 
 For requests that do not involve these channels, ignore this file and follow
 `AGENT_GUIDE.md` as usual.

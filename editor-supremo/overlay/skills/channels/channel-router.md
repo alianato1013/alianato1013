@@ -38,7 +38,12 @@ locked voice (or "voice not locked yet — will ask once"), visual sourcing orde
 audit minimum score. Then continue with the pipeline's first stage.
 
 ### Step 4 — Run the pipeline
-`proposal → script → scene_plan → assets → edit (+storyboard_audit) → compose (+render_audit) → publish`.
+`proposal → script → scene_plan → assets → edit (+storyboard_audit) → compose (+render_audit) → publish → deliver`.
+
+**Deliver** (after the publish gate is approved): `bash scripts/channel_cloud/deliver.sh <project-id>`.
+It uploads to `gdrive:YouTube/<Channel>/<project-id>/`, verifies the copy, frees the server disk and
+writes `DELIVERED.txt`. If the rclone remote is not configured, tell the user (in Spanish) and keep
+the files; never delete undelivered work.
 Before every stage, re-read the bible sections that the stage depends on
 (listed in each bible under "Stage checklist").
 
