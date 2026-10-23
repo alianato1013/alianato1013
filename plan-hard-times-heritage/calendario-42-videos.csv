@@ -1,0 +1,43 @@
+n,semana,fase,fecha,dia,formula,titulo,texto_miniatura,plantilla_miniatura,outlier_de_referencia,nota
+1,1,1-Prueba,2026-10-26,lunes,A,"25 ""Poor Man"" Money Habits 1950s Mothers Used That Seniors on Fixed Incomes Need Now",FIXED INCOME?,A,FFA UrQVGaAKRVM (65k) / cEAWTQzx3RI (49k),
+2,1,1-Prueba,2026-10-28,miércoles,B,27 SECRET Places 1950s Housewives Hid Money From Their Husbands — And Why It Saved the Family,SHE HID IT HERE,B,FFA DCfJ-YuW1F4 (295k); remake of your Eh_zwHDFIZY at 25 min,
+3,1,1-Prueba,2026-10-30,viernes,A,How 1950s Widows Kept the House Running on Almost Nothing — 25 Rules They Never Broke,ALONE. AND FINE.,A,FFW B6KmhodW6z8 (73k),
+4,2,1-Prueba,2026-11-02,lunes,E,"20 ""Poor Man"" Winter Tricks Grandma Used to Keep the Heating Bill Tiny",HEAT FOR PENNIES,C,GLH g_Z7RA9UeXU (242k); Frugal Evelyn winter (69k),
+5,2,1-Prueba,2026-11-04,miércoles,C,25 Money Secrets Irish Immigrant Mothers Used to Survive in America,THEY SURVIVED ON THIS,A,FFA Fxoi9Z7z2Sc (199k) / Z4WIZ6aftvE (129k),
+6,2,1-Prueba,2026-11-06,viernes,H,25 MORE Money Rules 1950s Mothers Taught Their Daughters (The Ones We Forgot),MOTHER'S RULES,A,"Your KC7v3xjAbLo (8.1k, 27:42)",
+7,3,1-Prueba,2026-11-09,lunes,D,25 Things Depression-Era Grandmothers Refused to Throw Away — And What They Did With Them,DON'T TOSS THIS,B,GLH 1SavAfbRqwQ (113k) / AizKFwQcAAs (82k),
+8,3,1-Prueba,2026-11-11,miércoles,F,20 Quiet Money Habits That Let One Paycheck Feed a Whole 1950s Family,ONE PAYCHECK?,C,Lost Ledger ck7YV9x13WI (176k),
+9,3,1-Prueba,2026-11-13,viernes,A,"20 ""Embarrassing"" Frugal Habits Every Senior Should Start Before Winter",DO THIS FIRST,A,FFA cEAWTQzx3RI (49k) / m1eRkscEkXQ (46k),
+10,4,2-Duplicar,2026-11-16,lunes,E,How 1950s Mothers Put Thanksgiving on the Table for Almost Nothing — 25 Tricks,$4 THANKSGIVING,C,GLH g_Z7RA9UeXU (242k) + seasonal,Reemplazable por la fórmula ganadora
+11,4,2-Duplicar,2026-11-18,miércoles,C,25 Frugal Secrets Polish Immigrant Grandmothers Brought to America,NEVER SHARED,A,FFA Fxoi9Z7z2Sc (199k),Reemplazable por la fórmula ganadora
+12,4,2-Duplicar,2026-11-20,viernes,A,"25 ""Poor Man"" Grocery Rules Seniors Living Alone Should Start This Week",SENIORS: START NOW,C,FFA FIVWSidZUDg (62k) / pqrbYpXO6f8 (74k),Reemplazable por la fórmula ganadora
+13,5,2-Duplicar,2026-11-23,lunes,D,"25 ""Poor Man"" Thanksgiving Leftover Tricks Depression Mothers Never Wasted",NEVER WASTED,B,GLH 1SavAfbRqwQ (113k) + Thanksgiving week,Reemplazable por la fórmula ganadora
+14,5,2-Duplicar,2026-11-25,miércoles,B,20 Ways 1950s Wives Built a Secret Christmas Fund Without Their Husbands Knowing,SECRET FUND,B,FFA DCfJ-YuW1F4 (295k) + Christmas,Reemplazable por la fórmula ganadora
+15,5,2-Duplicar,2026-11-27,viernes,H,20 Things 1950s Housewives Refused to Buy at Christmas — And Why We're Broke in January,WE'RE BROKE. WHY?,C,Your 5Rkwy1tU1fA (6k) + Black Friday,Reemplazable por la fórmula ganadora
+16,6,2-Duplicar,2026-11-30,lunes,D,25 Homemade Christmas Gifts Depression-Era Families Gave When There Was No Money,NO MONEY. STILL CHRISTMAS.,B,GLH q25VCXhERAs (59k) + Christmas,Reemplazable por la fórmula ganadora
+17,6,2-Duplicar,2026-12-02,miércoles,A,20 Old-Fashioned Habits Seniors Use to Make a Fixed Income Last the Whole Month,LAST THE MONTH,A,FFA 2-qiaWeZ6Ck (44k),Reemplazable por la fórmula ganadora
+18,6,2-Duplicar,2026-12-04,viernes,C,25 Money Tricks Appalachian Grandmothers Used to Get Through Hard Winters,MOUNTAIN SECRETS,A,FFA Z4WIZ6aftvE (129k),Reemplazable por la fórmula ganadora
+19,7,2-Duplicar,2026-12-07,lunes,E,How a 1950s Family Did Christmas on $20 — 25 Rules Grandma Swore By,$20 CHRISTMAS?,C,GLH g_Z7RA9UeXU (242k) + Christmas [VERIFY $ with BLS],Reemplazable por la fórmula ganadora
+20,7,2-Duplicar,2026-12-09,miércoles,D,25 Things Grandma Never Bought in December — She Made Them Herself,GRANDMA MADE IT,B,GLH q25VCXhERAs (59k),Reemplazable por la fórmula ganadora
+21,7,2-Duplicar,2026-12-11,viernes,A,20 Rules 1950s Widows Followed to Never Fall Behind on a Single Bill,NEVER LATE,A,FFW B6KmhodW6z8 (73k),Reemplazable por la fórmula ganadora
+22,8,2-Duplicar,2026-12-14,lunes,H,25 Forgotten Christmas Traditions That Cost 1950s Families Almost Nothing,ALMOST FREE,C,Your winners + seasonal,Reemplazable por la fórmula ganadora
+23,8,2-Duplicar,2026-12-16,miércoles,C,25 Kitchen Secrets Italian-American Nonnas Used to Feed Big Families for Pennies,NONNA KNEW,A,FFA Fxoi9Z7z2Sc (199k),Reemplazable por la fórmula ganadora
+24,8,2-Duplicar,2026-12-18,viernes,A,"20 ""Poor Man"" Habits That Get Seniors Through January Without Debt",JANUARY PLAN,A,FFA UrQVGaAKRVM (65k),Reemplazable por la fórmula ganadora
+25,9,2-Duplicar,2026-12-21,lunes,H,What 1950s Mothers Did the Week Before Christmas That We Completely Forgot,WE FORGOT THIS,A,Your KC7v3xjAbLo (8.1k),Reemplazable por la fórmula ganadora
+26,9,2-Duplicar,2026-12-23,miércoles,B,Egg Money: 20 Ways 1950s Wives Earned Their Own Money From Home,HER OWN MONEY,B,FFA DCfJ-YuW1F4 (295k); remake of your 92XrJ19plN0,Reemplazable por la fórmula ganadora
+27,9,2-Duplicar,2026-12-26,sábado,H,25 Money Rules 1950s Mothers Followed After Christmas to Start the Year Debt-Free,DEBT-FREE BY JAN,A,Your KC7v3xjAbLo (8.1k),Reemplazable por la fórmula ganadora
+28,10,2-Duplicar,2026-12-28,lunes,F,25 Old-Fashioned Money Resolutions 1950s Families Actually Kept,THEY KEPT THESE,C,Lost Ledger ck7YV9x13WI (176k) + New Year,Reemplazable por la fórmula ganadora
+29,10,2-Duplicar,2026-12-30,miércoles,A,"25 ""Poor Man"" Money Tricks Seniors Should Start in January Before Prices Rise Again",START IN JANUARY,A,FFA jqHcULlcMh0 (87k),Reemplazable por la fórmula ganadora
+30,10,2-Duplicar,2027-01-01,viernes,F,20 Forgotten Money Habits That Kept 1950s Families Out of Debt — Start Them This Year,OUT OF DEBT,C,Lost Ledger ck7YV9x13WI (176k),Reemplazable por la fórmula ganadora
+31,11,3-Empuje,2027-01-04,lunes,D,25 Things Grandma Reused Until They Fell Apart — The Genius Reasons Why,GENIUS. NOT CHEAP.,B,GLH AizKFwQcAAs (82k),Reemplazable por la fórmula ganadora
+32,11,3-Empuje,2027-01-06,miércoles,C,25 Money Habits Mennonite Families Still Use That Most Americans Forgot,THEY STILL DO THIS,A,FFA Z4WIZ6aftvE (129k),Reemplazable por la fórmula ganadora
+33,11,3-Empuje,2027-01-08,viernes,E,"20 ""Poor Man's"" Pantry Rules That Make a $100 Grocery Week Possible Again",$100 WEEK,C,GLH g_Z7RA9UeXU (242k),Reemplazable por la fórmula ganadora
+34,12,3-Empuje,2027-01-11,lunes,A,25 Habits Seniors Living Alone Use to Cut Every Bill in Half,HALF THE BILLS,A,FFA pqrbYpXO6f8 (74k),Reemplazable por la fórmula ganadora
+35,12,3-Empuje,2027-01-13,miércoles,A,25 Forgotten Rules 1950s Widows Used to Stretch a Small Pension,SMALL PENSION?,A,FFW B6KmhodW6z8 (73k),Reemplazable por la fórmula ganadora
+36,12,3-Empuje,2027-01-15,viernes,H,25 Things 1950s Mothers Never Paid For — That Cost Us Hundreds Every Month,THEY PAID $0,C,Your 5Rkwy1tU1fA (6k),Reemplazable por la fórmula ganadora
+37,13,3-Empuje,2027-01-18,lunes,C,25 Money Lessons Greek Immigrant Families Never Shared Outside the Family,NEVER SHARED,A,FFA z9sdpBwBSvg (37k),Reemplazable por la fórmula ganadora
+38,13,3-Empuje,2027-01-20,miércoles,B,25 Hiding Places Depression-Era Families Used to Protect Their Savings,HIDDEN SAVINGS,B,FFW 3pkvK3oLg5k / FFA DCfJ-YuW1F4,Reemplazable por la fórmula ganadora
+39,13,3-Empuje,2027-01-22,viernes,A,"20 ""Poor Man"" Kitchen Habits That Keep Seniors Fed When Money Runs Short",WHEN MONEY RUNS OUT,A,FFA FIVWSidZUDg (62k),Reemplazable por la fórmula ganadora
+40,14,3-Empuje,2027-01-25,lunes,D,25 Things Grandma Saved Every Week That Most of Us Throw in the Trash,STOP TOSSING THIS,B,GLH 1SavAfbRqwQ (113k),Reemplazable por la fórmula ganadora
+41,14,3-Empuje,2027-01-27,miércoles,F,20 Forgotten Money Rules That Made Ordinary 1950s Women Financially Untouchable,UNTOUCHABLE,A,Lost Ledger ck7YV9x13WI (176k),Reemplazable por la fórmula ganadora
+42,14,3-Empuje,2027-01-29,viernes,A,"25 ""Poor Man"" Habits Every Senior Should Start Before Their Savings Run Out",BEFORE IT RUNS OUT,A,FFA m1eRkscEkXQ (46k),Reemplazable por la fórmula ganadora
