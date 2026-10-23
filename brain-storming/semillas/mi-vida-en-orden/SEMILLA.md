@@ -78,7 +78,7 @@ Los 5 anuncios completos (texto, título, CTA, guion por segundos y prompt de pr
   - **lo malo:** hay pocos anuncios pagados ganadores que modelar.
 
   Por eso los creativos se modelan de ganadores **orgánicos** probados.
-- El resultado de la búsqueda exacta "in case I die" está en la sección 6b.
+- **Medición pendiente:** la búsqueda con la frase exacta ("in case I die", "emergency binder printable") y la de anuncios en español en EE. UU. las hace el Cazador con ScrapeCreators el primer día. Si aparece un anunciante del nicho con 100 anuncios o más, Brain propone creativos nuevos modelados de esos anuncios pagados.
 
 ## 7. Riesgos y cómo se manejan
 
