@@ -1,0 +1,99 @@
+identity:
+  name: "Beneath America"
+  category: motion-graphics
+  mood: curious, confident, cinematic, scientific
+  pace: fast
+  best_for: "What's-under-it geography documentaries of US places with cross-section graphics (Beneath America channel only)"
+
+visual_language:
+  color_palette:
+    primary: ["#8B6B47", "#4A4F57"]
+    accent: ["#FFD23F", "#2EC4D6"]
+    background: "#0E1116"
+    text: "#FFFFFF"
+    muted: "#9AA3AF"
+  composition: "surface establishing shot first, then the ground cut open; depth always reads top-to-bottom; labels left, subject center"
+  texture: "clean, crisp, 4K-sharp; earth strata textures; no film grain"
+
+typography:
+  headings:
+    font: "Montserrat"
+    weight: 800
+    tracking: "-0.01em"
+  body:
+    font: "Inter"
+    weight: 500
+    line_height: 1.45
+  stat_card:
+    font: "Montserrat"
+    weight: 900
+    size_multiplier: 3.4
+  scale_system: "major_third"
+  weight_matrix:
+    title: 900
+    heading: 800
+    body: 500
+    caption: 600
+
+motion:
+  transitions: [cut, dissolve]
+  animation_style: "constant motion: real drone/satellite footage plus composer presets (zoom-in, zoom-out, pan-left, pan-right, ken-burns); a layer descent = cut to the depth card, then zoom-in on the deeper part of the cross-section"
+  pacing_rules:
+    min_scene_hold_seconds: 2
+    max_scene_hold_seconds: 4
+    text_card_hold_seconds: 2
+    stat_card_hold_seconds: 2.5
+    transition_duration_seconds: 0.3
+  entrance: "cut, then zoom-in"
+  exit: "cut"
+
+audio:
+  voice_style: "confident, curious documentary narrator; 145-155 wpm; slightly dramatic, never sensationalist"
+  music_mood: "atmospheric electronic or orchestral pulse, steady build, mysterious-scientific"
+  music_volume: 0.08
+  sfx_style: "whoosh on transitions, low earth rumble when descending a layer, water and city ambience when on screen"
+  ducking_threshold_db: -20
+  voice_variation_allowed: false
+
+asset_generation:
+  image_prompt_prefix: "clean scientific cutaway illustration, cross-section of the ground, earth-tone strata, cyan water, soft studio lighting, high detail, "
+  image_negative_prompt: "text, letters, labels, watermark, logo, fantasy castles, aliens, lava everywhere, cartoonish, low detail, distorted buildings, wrong landmarks"
+  diagram_style: "cross-section strata in ochre, brown and gray; water in cyan with particles; faults as broken red lines; yellow depth labels on the left"
+  consistency_anchors:
+    - "Every episode includes the cross-section diagram as the visual signature"
+    - "Depth labels in yellow, water in cyan"
+    - "Real places shown with real photos, drone, satellite or USGS/NOAA/NASA imagery"
+    - "AI only for cutaway illustrations and reconstructions"
+
+overlays:
+  section_title:
+    bg: "#0E1116"
+    text: "#FFD23F"
+    accent: "#2EC4D6"
+  stat_reveal:
+    bg: "#0E1116"
+    text: "#FFFFFF"
+    accent: "#FFD23F"
+  stat_card:
+    bg: "#0E1116"
+    border: "#FFD23F"
+    text: "#FFFFFF"
+    radius: 4
+
+quality_rules:
+  - "Every real place shown is the place named in the line (never a look-alike)"
+  - "Depth card (e.g., '300 FT · THE AQUIFER') at the start of every layer"
+  - "Numbers on screen exactly as narrated"
+  - "Maps and satellite imagery carry their attribution when required (e.g., Google Earth)"
+  - "No conspiracy imagery"
+
+chart_palette:
+  - "#FFD23F"
+  - "#2EC4D6"
+  - "#8B6B47"
+  - "#9AA3AF"
+
+color_rules:
+  harmony_type: "complementary"
+  contrast_validation: true
+  colorblind_safe: true

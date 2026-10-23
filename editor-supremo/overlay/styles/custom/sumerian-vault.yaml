@@ -1,0 +1,101 @@
+identity:
+  name: "Sumerian Vault"
+  category: cinematic
+  mood: reverent, mysterious, intelligent, candle-lit
+  pace: deliberate
+  best_for: "Narrative documentaries on real Sumerian texts about women, goddesses and the afterlife (Sumerian Vault channel only)"
+
+visual_language:
+  color_palette:
+    primary: ["#1F3A93", "#0B1026"]
+    accent: ["#C9A227", "#E8D9A8"]
+    background: "#0B1026"
+    text: "#F1E9D2"
+    muted: "#6B7394"
+  composition: "centered sacred compositions, deep negative space, objects lit like museum pieces, low camera on statues and tablets"
+  texture: "dust in the air, torchlight flicker, subtle film grain, clay and lapis textures"
+
+typography:
+  headings:
+    font: "Cormorant Garamond"
+    weight: 700
+    tracking: "0.04em"
+  body:
+    font: "Cormorant Garamond"
+    weight: 500
+    line_height: 1.5
+  stat_card:
+    font: "Cormorant Garamond"
+    weight: 700
+    size_multiplier: 2.6
+  scale_system: "golden"
+  weight_matrix:
+    title: 700
+    heading: 700
+    body: 500
+    caption: 500
+
+motion:
+  transitions: [dissolve, fade]
+  animation_style: "composer motion presets only: zoom-in for push-ins on objects, pan-left/pan-right for landscapes, parallax for figures; 'mist' particles (the composer's closest to floating dust; only on anime_scene cuts); transitions only fade/dissolve"
+  pacing_rules:
+    min_scene_hold_seconds: 3
+    max_scene_hold_seconds: 6
+    text_card_hold_seconds: 3
+    stat_card_hold_seconds: 3
+    transition_duration_seconds: 0.7
+  entrance: "slow fade-in with slight scale 1.03 -> 1.0"
+  exit: "dissolve to black"
+
+audio:
+  voice_style: "deep, warm documentary narrator; 135-145 wpm; reverent; deliberate pauses on '…'"
+  music_mood: "atmospheric drones, low strings, soft ancient percussion, never epic trailer music"
+  music_volume: 0.06
+  sfx_style: "sparse: water, wind, stone doors, distant chant — only when the line describes it"
+  ducking_threshold_db: -20
+  voice_variation_allowed: false
+
+asset_generation:
+  image_prompt_prefix: "ancient Mesopotamian art style blended with cinematic realism, deep lapis lazuli blue and burnished gold palette, candle and torch light, dust in the air, dramatic chiaroscuro, museum-quality detail, "
+  image_negative_prompt: "aliens, spaceships, UFO, sci-fi, modern objects, Egyptian pyramids, Greek or Roman costume, medieval armor, text, letters, fake cuneiform, watermark, logo, cartoon, anime, extra fingers, deformed hands, neon"
+  diagram_style: "gold line maps of Mesopotamia on deep blue, clean serif labels"
+  consistency_anchors:
+    - "Lapis lazuli blue and gold dominate every frame"
+    - "Real tablets, seals and artifacts are photographs, never AI"
+    - "Goddesses and rituals in Sumerian dress and setting only"
+    - "Dark, candle-lit, reverent mood"
+  default_particles: "mist"
+  default_particle_color: "#E8D9A8"
+  default_vignette: true
+
+overlays:
+  section_title:
+    bg: "#0B1026"
+    text: "#C9A227"
+    accent: "#1F3A93"
+  hero_title:
+    text: "#F1E9D2"
+    accent: "#C9A227"
+  stat_card:
+    bg: "#0B1026"
+    border: "#C9A227"
+    text: "#F1E9D2"
+    radius: 2
+
+quality_rules:
+  - "A real photo of the tablet or artifact appears whenever the line names it"
+  - "Quoted translations appear on screen as a quote card with the text's name underneath"
+  - "No alien, sci-fi or Egyptian imagery under any circumstance"
+  - "AI is used for goddesses, rituals, landscapes and reconstructions only"
+  - "Act title card at the start of every act"
+
+chart_palette:
+  - "#C9A227"
+  - "#1F3A93"
+  - "#E8D9A8"
+  - "#6B7394"
+
+color_rules:
+  harmony_type: "complementary"
+  contrast_validation: true
+  colorblind_safe: true

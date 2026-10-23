@@ -1,0 +1,212 @@
+name: channel-documentary
+version: "1.0"
+description: >
+  Long-form faceless documentary for one of the owner's YouTube channels, built from a
+  FINISHED script the user supplies (never rewritten). Every stage is bound by that
+  channel's CHANNEL_BIBLE.md (channels/<channel>/CHANNEL_BIBLE.md). A mandatory visual
+  audit checks every narrated sentence against the visual on screen twice: on the edit
+  timeline (storyboard_audit) and on the rendered file (render_audit). Nothing is
+  composed or delivered until the audit passes.
+category: documentary
+stability: beta
+
+default_checkpoint_policy: guided
+
+reference_input:
+  supported: false
+
+extensions:
+  custom_scripts: true
+  custom_playbooks: true
+  custom_skills: true
+  custom_tools: false
+
+required_skills:
+  - channels/channel-router
+  - channels/channel-proposal-director
+  - channels/script-lock-director
+  - channels/visual-auditor
+  - pipelines/explainer/scene-director
+  - pipelines/explainer/asset-director
+  - pipelines/explainer/edit-director
+  - pipelines/explainer/compose-director
+  - pipelines/explainer/publish-director
+  - meta/reviewer
+  - meta/checkpoint-protocol
+  - meta/voice-performance-director
+
+compatible_playbooks:
+  recommended:
+    - hard-times-heritage
+    - sumerian-vault
+    - beneath-america
+  custom_allowed: false
+
+stages:
+  - name: proposal
+    skill: channels/channel-proposal-director
+    produces:
+      - proposal_packet
+      - decision_log
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "The channel was identified explicitly and its CHANNEL_BIBLE.md was read in full before this stage"
+      - "style_playbook equals the playbook named in the bible; render_runtime equals the bible's runtime"
+      - "All three concept options are treatment variants that obey the bible (no new angle, format or style)"
+      - "Voice equals the bible's locked voice (or the user is asked to lock one for the first time)"
+      - Cost estimate is itemized and honest
+    success_criteria:
+      - Schema-valid proposal_packet with 3 concept_options and an approved selection
+
+  - name: script
+    skill: channels/script-lock-director
+    required_artifacts_in:
+      - proposal_packet
+    produces:
+      - script
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Narration text is IDENTICAL to the user's script (script_lock hash matches); no word added, removed or reworded"
+      - "No unresolved [VERIFY] tags remain in narrated text"
+      - "Sections follow the bible's structure markers ([ITEM #], [ACT], [LAYER])"
+      - "Timing derived from the bible's words-per-minute"
+    success_criteria:
+      - Schema-valid script whose metadata.script_lock.narration_sha256 matches the source file
+
+  - name: scene_plan
+    skill: pipelines/explainer/scene-director
+    required_artifacts_in:
+      - script
+    optional_artifacts_in:
+      - proposal_packet
+    produces:
+      - scene_plan
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Every sentence of narration has a planned visual that depicts what that sentence says (bible section: Visual rules per line)"
+      - "Scene durations respect the bible's hold times; no visual held longer than the bible's maximum"
+      - "Section cards / chapter cards follow the bible's edit grammar"
+      - "Forbidden imagery list from the bible is respected in every scene description"
+    success_criteria:
+      - Schema-valid scene_plan covering the full narration with no gaps
+
+  - name: assets
+    skill: pipelines/explainer/asset-director
+    required_artifacts_in:
+      - scene_plan
+      - script
+    optional_artifacts_in:
+      - proposal_packet
+    produces:
+      - asset_manifest
+    required_tools:
+      - tts_selector
+      - image_selector
+    tools_available:
+      - tts_selector
+      - image_selector
+      - video_selector
+      - diagram_gen
+      - music_gen
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Narration generated with the bible's locked voice and reads the script verbatim"
+      - "Sourcing order follows the bible (real/licensed first, AI only where the bible allows)"
+      - "Every AI image prompt starts with the playbook image_prompt_prefix and uses its negative prompt"
+      - "Every non-generated asset records license and original_url in asset_manifest"
+    success_criteria:
+      - Schema-valid asset_manifest; all paths exist; licenses recorded
+
+  - name: edit
+    skill: pipelines/explainer/edit-director
+    required_artifacts_in:
+      - scene_plan
+      - asset_manifest
+    optional_artifacts_in:
+      - script
+    produces:
+      - edit_decisions
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "storyboard_audit sub-stage PASSED (projects/<id>/audit/storyboard/audit_report.json status=PASS)"
+      - "Transitions, hold times, subtitle style and music level match the bible and playbook"
+      - No timeline gaps or overlaps during narration
+    success_criteria:
+      - Schema-valid edit_decisions
+      - "audit/storyboard/audit_report.json exists with status PASS"
+    sub_stages:
+      - name: storyboard_audit
+        description: >
+          Mandatory. Run skills/channels/visual-auditor.md in mode=storyboard on the edit
+          timeline. Every narrated sentence x visual pair must score >= the bible's minimum.
+          Fix, rebuild and re-grade until PASS. Do not write the edit checkpoint as completed
+          or start compose before PASS.
+        human_approval_default: true
+        tools_available: [image_selector, video_selector]
+        review_focus:
+          - "Every row graded by looking at the actual image, not the prompt"
+          - "No row below the bible's minimum score; no hard-fail flags"
+
+  - name: compose
+    skill: pipelines/explainer/compose-director
+    required_artifacts_in:
+      - edit_decisions
+      - asset_manifest
+    optional_artifacts_in:
+      - scene_plan
+    produces:
+      - render_report
+      - final_review
+    required_tools:
+      - video_compose
+      - audio_mixer
+    tools_available:
+      - video_compose
+      - audio_mixer
+      - video_stitch
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "render_runtime equals the bible and the proposal (no silent swap)"
+      - "render_audit sub-stage PASSED on the final file (audit/render/audit_report.json status=PASS)"
+      - Narration loudness and music ducking match the bible
+      - "Duration within +/-5% of the script's total_duration_seconds"
+    success_criteria:
+      - Schema-valid render_report; final.mp4 passes ffprobe
+      - "audit/render/audit_report.json exists with status PASS"
+    sub_stages:
+      - name: render_audit
+        description: >
+          Mandatory. Transcribe the rendered file for word timings, then run
+          skills/channels/visual-auditor.md in mode=render. Frames are extracted from the
+          final video at every sentence x visual pair. Delivery is blocked until PASS.
+        human_approval_default: true
+        tools_available: [transcriber, frame_sampler]
+        review_focus:
+          - "Frames graded from pixels; subtitles and overlays do not cover the subject"
+          - "No row below the bible's minimum score; no hard-fail flags"
+
+  - name: publish
+    skill: pipelines/explainer/publish-director
+    required_artifacts_in:
+      - render_report
+      - final_review
+    produces:
+      - publish_log
+    tools_available: [export_bundle]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Title, description template, chapters and disclosures follow the bible's Publishing section"
+      - "Image credits/licenses listed in the description"
+    success_criteria:
+      - Schema-valid publish_log with chapters and credits

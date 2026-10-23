@@ -1,0 +1,98 @@
+identity:
+  name: "Hard Times Heritage"
+  category: retro
+  mood: warm, nostalgic, proud, reassuring
+  pace: moderate
+  best_for: "Long-form 1950s frugality countdowns for seniors on fixed incomes (Hard Times Heritage channel only)"
+
+visual_language:
+  color_palette:
+    primary: ["#B5452B", "#F3E6CC"]
+    accent: ["#7FB5A3", "#D9A441"]
+    background: "#F3E6CC"
+    text: "#2B2118"
+    muted: "#8C7B66"
+  composition: "one clear subject per frame, rule of thirds, mid-century domestic interiors, hands and objects in close-up for 'how it worked' beats"
+  texture: "faded Kodachrome film grain, soft vignette, warm paper texture on cards"
+
+typography:
+  headings:
+    font: "Playfair Display"
+    weight: 800
+  body:
+    font: "Lora"
+    weight: 500
+    line_height: 1.5
+  stat_card:
+    font: "Playfair Display"
+    weight: 900
+    size_multiplier: 3.2
+  scale_system: "perfect_fourth"
+  weight_matrix:
+    title: 900
+    heading: 800
+    body: 500
+    caption: 600
+
+motion:
+  transitions: [dissolve, fade]
+  animation_style: "every still moves with a composer motion preset (ken-burns-slow-zoom, zoom-in, zoom-out, pan-left, pan-right), alternating; never static; transitions only fade/dissolve"
+  pacing_rules:
+    min_scene_hold_seconds: 3
+    max_scene_hold_seconds: 6
+    text_card_hold_seconds: 2.5
+    stat_card_hold_seconds: 3
+    transition_duration_seconds: 0.5
+  entrance: "fade-in"
+  exit: "dissolve"
+
+audio:
+  voice_style: "mature, warm, trustworthy documentary narrator; 135-145 wpm; never mocking"
+  music_mood: "nostalgic soft piano or gentle strings, 1950s warmth, never comedic"
+  music_volume: 0.07
+  sfx_style: "very subtle: page turn on item cards, coin clink only when coins are on screen"
+  ducking_threshold_db: -20
+  voice_variation_allowed: false
+
+asset_generation:
+  image_prompt_prefix: "authentic 1950s Kodachrome photograph, warm faded film colors, soft natural window light, slight film grain, mid-century American working-class home, realistic, documentary style, "
+  image_negative_prompt: "modern objects, smartphones, plastic packaging, LED lights, flat-screen TV, contemporary clothing, text, letters, watermark, logo, cartoon, anime, 3d render, extra fingers, deformed hands, glamour, luxury mansion"
+  diagram_style: "vintage ledger and recipe-card look, hand-lettered numbers in brick red on cream"
+  consistency_anchors:
+    - "1950s working-class American homes and towns only"
+    - "Warm Kodachrome palette with brick red, cream, mint and mustard"
+    - "Every AI image photographic, never illustrated"
+    - "Real hands, real household objects, modest interiors"
+  default_vignette: true
+
+overlays:
+  stat_card:
+    bg: "#F3E6CC"
+    border: "#B5452B"
+    text: "#2B2118"
+    radius: 6
+  section_title:
+    bg: "#B5452B"
+    text: "#F3E6CC"
+    accent: "#D9A441"
+  hero_title:
+    text: "#F3E6CC"
+    accent: "#B5452B"
+
+quality_rules:
+  - "Every image matches the 1950s era unless the line is explicitly about today"
+  - "'Today' lines use modern stock of seniors, groceries, receipts, never 1950s imagery"
+  - "Subtitles large and high contrast; the audience is 60+"
+  - "No visual held longer than 6 seconds without motion or a cut"
+  - "Item title card before every countdown item"
+
+chart_palette:
+  - "#B5452B"
+  - "#7FB5A3"
+  - "#D9A441"
+  - "#8C7B66"
+
+color_rules:
+  harmony_type: "triadic"
+  contrast_validation: true
+  colorblind_safe: true
