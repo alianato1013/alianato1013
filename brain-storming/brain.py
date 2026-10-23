@@ -761,6 +761,8 @@ def known_ids_for(d):
                     ids.update(c.get("other_ad_ids") or [])
             for it in nd["organic"]["tiktok"] + nd["organic"]["instagram"]:
                 ids.add(str(it["id"]))
+    seed = jload(os.path.join(d, "EVIDENCIA-SEMILLA.json"), {})
+    ids.update(str(x["id"]) for x in seed.get("fuentes", []) if x.get("id"))
     return ids
 
 
@@ -935,6 +937,8 @@ def publish_campaign(cfg, nj, d, p, m, acct, res):
                      "age_min": meta.get("edad_min", 18), "age_max": meta.get("edad_max", 65)}
         if meta.get("generos"):
             targeting["genders"] = meta["generos"]
+        if meta.get("locales"):  # language targeting; ids from: brain.py meta-locales <idioma>
+            targeting["locales"] = meta["locales"]
         res["adset_id"] = m.post(
             f"{acct}/adsets", name=f"BS|{p['id']}|{mercado}", campaign_id=res["campaign_id"],
             daily_budget=int(round(meta["presupuesto_diario_usd"] * 100)),
@@ -1037,6 +1041,54 @@ def cmd_estado(args):
         print(f"  {p['id']} [{p['estado']}] {p['tipo']}: {p['resumen']}")
 
 
+def cmd_sembrar(args):
+    """Create a niche brain from a researched seed (brain files, evidence, first proposals)."""
+    cfg = config()
+    src = args.semilla if os.path.isdir(args.semilla) else os.path.join(HERE, "semillas", args.semilla)
+    nj = jload(os.path.join(src, "nicho.json"))
+    if not nj:
+        sys.exit(f"No nicho.json in {src}")
+    d = os.path.join(DATA, "cerebro", nj["slug"])
+    if os.path.exists(d):
+        sys.exit(f"{d} already exists (the brain is never overwritten)")
+    shutil.copytree(os.path.join(HERE, "plantillas", "cerebro"), d)
+    for sub in ("diario", "propuestas", "assets", "historial"):
+        os.makedirs(os.path.join(d, sub), exist_ok=True)
+    for f in os.listdir(os.path.join(src, "cerebro")):
+        shutil.copy(os.path.join(src, "cerebro", f), os.path.join(d, f))
+    shutil.copy(os.path.join(src, "evidencia.json"), os.path.join(d, "EVIDENCIA-SEMILLA.json"))
+    shutil.copy(os.path.join(src, "SEMILLA.md"), os.path.join(d, "historial", "SEMILLA.md"))
+    nj["fijado"] = today()
+    jsave(os.path.join(d, "nicho.json"), nj)
+    for f in sorted(os.listdir(os.path.join(src, "propuestas"))):
+        p = jload(os.path.join(src, "propuestas", f))
+        p["creada"] = today()
+        p["estado"] = "pendiente"
+        jsave(os.path.join(d, "propuestas", f), p)
+    cfg["nicho_activo"] = nj["slug"]
+    jsave(os.path.join(DATA, "config.json"), cfg)
+    with open(os.path.join(d, "DECISIONES.md"), "a", encoding="utf-8") as f:
+        f.write(f"\n- {today()} · Nicho sembrado desde la semilla `{os.path.basename(src)}` "
+                f"(análisis en historial/SEMILLA.md).\n")
+    errs = []
+    known = known_ids_for(d)
+    for p in proposals(d):
+        errs += [f"{p['id']}: {e}" for e in validate_proposal(cfg, nj, p, known)]
+    git_commit(f"sembrar {nj['slug']}")
+    log(f"Active niche: {nj['slug']} -> {d}")
+    print("Pending: fill nicho.json -> tienda.store_id, meta.ad_account_id/page_id/pixel_id.")
+    if errs:
+        print("Proposal warnings:\n- " + "\n- ".join(errs))
+
+
+def cmd_meta_locales(args):
+    cfg = config()
+    m = Meta(cfg)
+    rows = m.get("search", type="adlocale", q=args.idioma).get("data", [])
+    for r in rows:
+        print(f"{r.get('key')}\t{r.get('name')}")
+
+
 def main():
     p = argparse.ArgumentParser(description="Brain Storming")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -1075,6 +1127,12 @@ def main():
     s.set_defaults(fn=cmd_publica)
     sub.add_parser("meta-check").set_defaults(fn=cmd_meta_check)
     sub.add_parser("estado").set_defaults(fn=cmd_estado)
+    s = sub.add_parser("sembrar")
+    s.add_argument("semilla", help="folder in brain-storming/semillas/ (or a path)")
+    s.set_defaults(fn=cmd_sembrar)
+    s = sub.add_parser("meta-locales")
+    s.add_argument("idioma", help="e.g. Spanish")
+    s.set_defaults(fn=cmd_meta_locales)
     args = p.parse_args()
     args.fn(args)
 

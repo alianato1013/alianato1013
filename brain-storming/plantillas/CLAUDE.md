@@ -39,6 +39,7 @@ Ejecuta `$B estado` y muéstrale al dueño, en 5 líneas como máximo:
 | "estado" | `$B estado` |
 | "busca nichos" | Sigues `roles/CAZADOR.md`, fase 1 |
 | "fija el nicho X" | Sigues `roles/CAZADOR.md`, fase 2 |
+| "siembra <semilla>" | `$B sembrar <semilla>`: crea el cerebro y la primera campaña a partir de una investigación ya hecha (`brain-storming/semillas/`). Después pides los ids de la tienda y de Meta, como en la fase 2 del Cazador |
 | "reporte de hoy" / "reporte del <fecha>" | Lees `cerebro/<slug>/diario/<fecha>/REPORTE.md` y lo resumes. Si existe `NO-VERIFICADO.txt`, lo avisas primero |
 | "cola" | `$B cola` |
 | "explícame P-…" | Abres la propuesta y la explicas con su evidencia |

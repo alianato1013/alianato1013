@@ -1,0 +1,11 @@
+{
+ "fecha": "2026-10-23",
+ "nota": "Fuentes de la semilla. Los ids de aquí cuentan como evidencia válida para el verificador de brain.py.",
+ "fuentes": [
+  {"id": "Dca56cvtuit", "tipo": "instagram", "url": "https://www.instagram.com/reel/Dca56cvtuit/", "cuenta": "@lawmotherco", "metricas": "2.7M vistas, 23.2x su mediana, 1.6M seguidores", "fuente_dato": "vidIQ outlier search + NexLev watch, 2026-10-23"},
+  {"id": "DblGjrouRgT", "tipo": "instagram", "url": "https://www.instagram.com/reel/DblGjrouRgT/", "cuenta": "@noworganizing", "metricas": "740.2K vistas, 32.9x su mediana", "fuente_dato": "vidIQ + NexLev watch, 2026-10-23"},
+  {"id": "Db9QO0cPUWQ", "tipo": "instagram", "url": "https://www.instagram.com/reel/Db9QO0cPUWQ/", "cuenta": "@missikonic", "metricas": "1.1M vistas, 27.6x su mediana ('33, living alone, no kids')", "fuente_dato": "vidIQ, 2026-10-23"},
+  {"id": "7685794281356889357", "tipo": "tiktok", "url": "https://www.tiktok.com/@cornellbigred/video/7685794281356889357", "cuenta": "@cornellbigred", "metricas": "20.1M vistas, 12.6x su mediana", "fuente_dato": "vidIQ + NexLev watch, 2026-10-23"},
+  {"id": "7677252278943780109", "tipo": "tiktok", "url": "https://www.tiktok.com/@purepower34/video/7677252278943780109", "cuenta": "@purepower34", "metricas": "480K vistas, 64.4x su mediana (seguridad para mujeres que viven solas)", "fuente_dato": "vidIQ, 2026-10-23"}
+ ]
+}

@@ -1,0 +1,323 @@
+{
+ "id": "P-SEMILLA-01",
+ "tipo": "nuevo_producto",
+ "estado": "pendiente",
+ "creada": "",
+ "origen": "semilla",
+ "resumen": "Lanzar 'Mi Vida en Orden' (carpeta por si acaso, US$19 + bump US$9 + upsell US$17) a hispanohablantes en EE. UU. y Puerto Rico, US$15/día, 5 creativos modelados de lo que funciona en inglés",
+ "por_que": "El dolor está validado en inglés: 29% de los hogares de EE. UU. son de 1 persona (Censo 2025) y hay organic outliers enormes, como 'When I die folder' con 2.7M vistas (https://www.instagram.com/reel/Dca56cvtuit/) y 'Older adults often don't plan' con 20.1M (https://www.tiktok.com/@cornellbigred/video/7685794281356889357). En español casi no hay oferta (~2 listings según la propuesta; hipótesis — validar con el Cazador). El poder de compra es el de EE. UU. y el idioma es el del dueño. (interpretación) Mismo ángulo, otro idioma: océano azul.",
+ "evidencia": [
+  "https://www.instagram.com/reel/Dca56cvtuit/",
+  "https://www.instagram.com/reel/DblGjrouRgT/",
+  "https://www.instagram.com/reel/Db9QO0cPUWQ/",
+  "https://www.tiktok.com/@cornellbigred/video/7685794281356889357",
+  "https://www.census.gov/newsroom/press-releases/2025/families-and-living-arrangements.html"
+ ],
+ "aprendizajes_usados": [
+  "2026-10-23 · [M] · formato 'abrí la carpeta de… + N cosas'",
+  "2026-10-23 · [M] · 'no dejarles la carga a los hijos'",
+  "2026-10-23 · [B] · precio US$19–23"
+ ],
+ "producto": {
+  "clave": "core1",
+  "nombre": "Mi Vida en Orden: la carpeta por si acaso",
+  "promesa": "Si te pasa algo, tu persona encuentra todo en 10 minutos. Y tú empiezas hoy, en 10 minutos.",
+  "formato": "PDF rellenable + imprimible (US Letter) + versión tableta, 12 secciones; cada una abre con 'si solo tienes 10 minutos'",
+  "modulos": [
+   "1. Empieza aquí: la hoja de 10 minutos → lo esencial listo hoy",
+   "2. Mi persona de confianza → quién decide y cómo accede",
+   "3. Mi salud en 60 segundos → la hoja que va a urgencias",
+   "4. Llaves y acceso a la casa",
+   "5. Mapa del dinero (sin contraseñas) → nada queda en tu cabeza",
+   "6. Lo que se cobra solo → calendario anual",
+   "7. Vida digital y 2FA → tu teléfono deja de ser una caja fuerte sin combinación",
+   "8. Plan para mi mascota",
+   "9. Dónde está cada documento, de aquí y de allá",
+   "10. Si no puedo hablar: deseos de cuidado (organizador, no documento legal)",
+   "11. Deseos finales y cartas",
+   "12. Revisión anual"
+  ],
+  "precio_usd": 19,
+  "precio_original_usd": 39,
+  "prueba_precio": "A/B US$19 vs US$23: gana el que deje más ingreso por visitante",
+  "order_bump": {
+   "nombre": "Kit de tarjetas y hojas rápidas (cartera, puerta, mascota, hoja médica)",
+   "precio_usd": 9
+  },
+  "upsell": {
+   "nombre": "Legado digital paso a paso (teléfono, contraseñas, 2FA, redes, suscripciones)",
+   "precio_usd": 17
+  },
+  "entregable": "PDF propio diseñado con la BIBLIA (no ebook generado con IA de ImpulTienda: necesita formularios rellenables)",
+  "disclaimer": "Organizador personal. No sustituye asesoría legal, médica ni financiera."
+ },
+ "impultienda": {
+  "store_id": "<nicho.json tienda.store_id — se recomienda tienda checkout NUEVA 'Mi Vida en Orden', moneda USD, idioma es>",
+  "acciones": [
+   {
+    "accion": "crear_producto",
+    "args": {
+     "nombre": "Mi Vida en Orden: la carpeta por si acaso",
+     "tipo": "main",
+     "precio": 19,
+     "precio_original": 39,
+     "descripcion": "La carpeta para que, si te pasa algo, tu persona encuentre todo en 10 minutos. 12 secciones, rellenable en pantalla e imprimible. Empiezas hoy con la hoja de 10 minutos. Organizador personal: no sustituye asesoría legal, médica ni financiera."
+    }
+   },
+   {
+    "accion": "crear_producto",
+    "args": {
+     "nombre": "Kit de tarjetas y hojas rápidas",
+     "tipo": "upsell",
+     "precio": 9,
+     "descripcion": "Tarjeta de cartera, tarjeta para la puerta (mascota y contacto), hoja médica para urgencias. Imprimir y listo."
+    }
+   },
+   {
+    "accion": "crear_producto",
+    "args": {
+     "nombre": "Legado digital paso a paso",
+     "tipo": "upsell",
+     "precio": 17,
+     "solo_post_compra": true,
+     "descripcion": "Tu teléfono, tus cuentas y tu 2FA en orden, sin escribir contraseñas en papel."
+    }
+   },
+   {
+    "accion": "cargar_entregable",
+    "args": {
+     "nota": "subir los 3 PDF cuando estén diseñados"
+    }
+   },
+   {
+    "accion": "crear_embudo",
+    "args": {
+     "nombre": "MVO — lanzamiento",
+     "producto_principal": "Mi Vida en Orden: la carpeta por si acaso"
+    }
+   },
+   {
+    "accion": "agregar_item_embudo",
+    "args": {
+     "item": "Kit de tarjetas y hojas rápidas",
+     "rol": "upsell"
+    }
+   },
+   {
+    "accion": "configurar_checkout / textos de landing",
+    "args": {
+     "nota": "landing en español: promesa, 3 capas de dolor, qué incluye, garantía 30 días CON el procedimiento escrito, disclaimer, FAQ ('¿por qué pagar si hay plantillas gratis?')"
+    }
+   },
+   {
+    "accion": "automatizacion_brevo",
+    "args": {
+     "nota": "ACTIVAR recuperación de carrito antes de publicar (fuga detectada: ~7% checkout→pago, 0 correos de recuperación)"
+    }
+   }
+  ]
+ },
+ "meta": {
+  "paises": [
+   "US",
+   "PR"
+  ],
+  "presupuesto_diario_usd": 15,
+  "producto": "core1",
+  "edad_min": 30,
+  "edad_max": 65,
+  "locales": [],
+  "pendiente_publicador": [
+   "locales: ejecutar 'brain.py meta-locales Spanish' y poner las claves de 'Spanish (All)' en meta.locales (segmenta a quien usa Facebook en español)",
+   "Píxel: confirmar que la tienda nueva dispara Purchase. Si la cuenta no tiene historial de compras, considerar optimizar a InitiateCheckout los primeros días (lección GEO-V2 de la propuesta)"
+  ],
+  "anuncios": [
+   {
+    "creativo": "c1",
+    "angulo": "carpeta-de-mama",
+    "modela": "https://www.instagram.com/reel/Dca56cvtuit/",
+    "formato": "video 9:16, 15 s, texto en pantalla sobre b-roll cálido, música acústica alegre",
+    "texto": "Cuando abrí la carpeta de mi mamá, entendí todo lo que había hecho por nosotros sin decir nada. 📁\n\nEstaba todo: a quién llamar, qué se paga solo, dónde están los papeles de aquí y de allá, su médico, sus deseos.\n\nNo es pesimismo. Es cariño organizado.\n\nMi Vida en Orden es la carpeta para que tu familia no tenga que adivinar nada. Empiezas hoy, en 10 minutos.",
+    "titulo": "La carpeta que toda familia debería tener",
+    "cta": "LEARN_MORE",
+    "guion": [
+     {
+      "t": "0-3s",
+      "voz": "(sin voz, solo música)",
+      "pantalla": "Abrí la carpeta 'por si me pasa algo' de mi mamá… y supe que lo había hecho bien",
+      "plano": "Patio con niños jugando a contraluz, hora dorada"
+     },
+     {
+      "t": "3-5s",
+      "voz": "",
+      "pantalla": "Tenía 5 cosas que toda familia debería tener 👇",
+      "plano": "Manos de mujer abriendo una carpeta azul marino sobre una mesa de madera"
+     },
+     {
+      "t": "5-7s",
+      "voz": "",
+      "pantalla": "1. A quién llamar y quién decide",
+      "plano": "Página 'Mi persona de confianza'"
+     },
+     {
+      "t": "7-9s",
+      "voz": "",
+      "pantalla": "2. Qué se paga solo cada mes",
+      "plano": "Página del calendario de pagos"
+     },
+     {
+      "t": "9-11s",
+      "voz": "",
+      "pantalla": "3. Dónde está cada papel (de aquí y de allá)",
+      "plano": "Dedo señalando el índice de documentos"
+     },
+     {
+      "t": "11-13s",
+      "voz": "",
+      "pantalla": "4. Su salud en 60 segundos · 5. Sus deseos",
+      "plano": "Hoja médica y hoja de deseos"
+     },
+     {
+      "t": "13-15s",
+      "voz": "",
+      "pantalla": "Mi Vida en Orden · Empieza hoy en 10 minutos",
+      "plano": "Carpeta cerrada con el ícono de verificación, fondo crema, botón coral"
+     }
+    ],
+    "prompt_produccion": "Vertical 9:16 lifestyle video. Warm golden-hour backyard with children playing (soft focus, no faces close-up), then overhead shots of a woman's hands (Latina, 40s, simple ring) opening a deep navy (#14213D) binder with cream (#FAF6EF) pages and coral (#E4572E) tabs labeled in Spanish on a wooden table. Calm, hopeful, not sad. Text overlays added in edit with Fraunces font."
+   },
+   {
+    "creativo": "c2",
+    "angulo": "contacto-de-todos",
+    "modela": "https://www.instagram.com/reel/Db9QO0cPUWQ/",
+    "formato": "video 9:16, 12 s, montaje de rutina diaria con texto",
+    "texto": "Es la que llama al médico de su mamá. La que guarda la llave de su hermana. La que se sabe los números de todos de memoria.\n\nPero si una noche la que no vuelve a casa es ella… nadie sabría dónde está nada.\n\nMi Vida en Orden: la carpeta para que tu persona encuentre todo en 10 minutos. Porque tú también mereces un plan B.",
+    "titulo": "El contacto de emergencia de todos también necesita uno",
+    "cta": "LEARN_MORE",
+    "guion": [
+     {
+      "t": "0-2s",
+      "voz": "",
+      "pantalla": "Es el contacto de emergencia de todos",
+      "plano": "Mujer entrando a su casa con bolsas, de espaldas"
+     },
+     {
+      "t": "2-4s",
+      "voz": "",
+      "pantalla": "de su mamá · de sus hijos · de su hermana",
+      "plano": "Teléfono sonando sobre la mesa; ella contestando (sin cara)"
+     },
+     {
+      "t": "4-7s",
+      "voz": "",
+      "pantalla": "¿Y el de ella? ¿Quién sabría dónde está todo?",
+      "plano": "Cajón desordenado con papeles, llaves, sobres"
+     },
+     {
+      "t": "7-10s",
+      "voz": "",
+      "pantalla": "10 minutos hoy = nadie adivina mañana",
+      "plano": "Manos llenando la hoja 'Empieza aquí' en una tablet"
+     },
+     {
+      "t": "10-12s",
+      "voz": "",
+      "pantalla": "Mi Vida en Orden",
+      "plano": "Carpeta lista sobre la mesa, luz de tarde"
+     }
+    ],
+    "prompt_produccion": "Vertical 9:16 montage, Latina woman 40s seen from behind or hands-only (no face), coming home with grocery bags to a cozy apartment, phone ringing on a table, a messy drawer full of papers and keys, then calm shot of the navy/cream binder neatly organized. Warm, cinematic, natural light, R&B-style soft music."
+   },
+   {
+    "creativo": "c3",
+    "angulo": "ahora-o-los-hijos",
+    "modela": "https://www.instagram.com/reel/DblGjrouRgT/",
+    "formato": "video 9:16, 10 s, montaje de actividad con texto estático",
+    "texto": "Si no lo hacemos ahora, les toca a nuestros hijos adivinar. 😬\n\nContraseñas, pagos automáticos, pólizas, papeles de aquí y de allá… todo lo que hoy solo está en tu cabeza.\n\nMi Vida en Orden lo pone en un solo lugar. Una hoja de 10 minutos para empezar hoy.",
+    "titulo": "Hazlo hoy, que mañana cuesta más",
+    "cta": "LEARN_MORE",
+    "guion": [
+     {
+      "t": "0-3s",
+      "voz": "",
+      "pantalla": "Si no lo hacemos ahora… les toca a nuestros hijos adivinar",
+      "plano": "Pareja de 50+ ordenando cajas en un garaje (de espaldas)"
+     },
+     {
+      "t": "3-6s",
+      "voz": "",
+      "pantalla": "(o dejarles el caos 😬)",
+      "plano": "Estante con carpetas sin etiquetar, sobres sueltos"
+     },
+     {
+      "t": "6-8s",
+      "voz": "",
+      "pantalla": "Todo en una carpeta. 10 minutos para empezar.",
+      "plano": "Carpeta azul marino con pestañas coral, etiquetada"
+     },
+     {
+      "t": "8-10s",
+      "voz": "",
+      "pantalla": "Mi Vida en Orden",
+      "plano": "Mujer cerrando la carpeta y guardándola en un estante ordenado"
+     }
+    ],
+    "prompt_produccion": "Vertical 9:16 B-roll montage: Hispanic couple in their 50s seen from behind organizing storage bins in a garage, then a shelf of unlabeled folders and loose envelopes, then a single navy binder with coral tabs neatly labeled 'Mi Vida en Orden'. Upbeat, productive, not somber."
+   },
+   {
+    "creativo": "c4",
+    "angulo": "mascota",
+    "modela": "https://www.instagram.com/reel/DblGjrouRgT/",
+    "formato": "imagen 4:5 (carrusel opcional de 3)",
+    "texto": "Si un día no vuelves a casa, ¿quién le da de comer?\n\nNadie tiene la llave. Nadie sabe su comida, su veterinario ni su rutina.\n\nLa sección 'Plan para mi mascota' de Mi Vida en Orden trae su ficha y una tarjeta para la puerta. 🐾 10 minutos hoy, tranquilidad siempre.",
+    "titulo": "Su plan, por si acaso",
+    "cta": "LEARN_MORE",
+    "guion": [
+     {
+      "t": "imagen",
+      "voz": "",
+      "pantalla": "Si no vuelves esta noche… ¿quién le da de comer?",
+      "plano": "Perro esperando junto a la puerta, luz de atardecer"
+     }
+    ],
+    "prompt_produccion": "4:5 photo-realistic image: a medium-size mixed-breed dog sitting patiently by an apartment front door at dusk, warm light, a small cream card with a coral paw icon taped near the door handle. Space at top for headline text added in edit (Fraunces). Emotional but hopeful, no people."
+   },
+   {
+    "creativo": "c5",
+    "angulo": "telefono-llave",
+    "modela": "https://www.tiktok.com/@cornellbigred/video/7685794281356889357",
+    "formato": "video 9:16, 15 s, hablar a cámara sin mostrar la cara (voz IA) + texto dinámico",
+    "texto": "La mayoría no planifica. Y no por irresponsable: porque nadie quiere pensar en eso.\n\nPero hoy tu teléfono es la llave de tu vida: tus cuentas, tus fotos, tus pagos, tu 2FA. Si te pasa algo, ¿quién más puede abrirlo?\n\nMi Vida en Orden te enseña a dejarlo listo SIN escribir tus contraseñas en papel. Empieza hoy, en 10 minutos.",
+    "titulo": "Tu teléfono es la llave de tu vida",
+    "cta": "LEARN_MORE",
+    "guion": [
+     {
+      "t": "0-3s",
+      "voz": "La mayoría no planifica. Y no por irresponsable.",
+      "pantalla": "La mayoría no planifica.",
+      "plano": "Primer plano de un teléfono bloqueado sobre la mesa"
+     },
+     {
+      "t": "3-7s",
+      "voz": "Tu teléfono tiene tus cuentas, tus fotos, tus pagos… y el código que solo tú sabes.",
+      "pantalla": "cuentas · fotos · pagos · 2FA",
+      "plano": "Pantalla de bloqueo con notificaciones del banco (genéricas)"
+     },
+     {
+      "t": "7-11s",
+      "voz": "Si te pasa algo, nadie podría abrirlo. Y no necesitas escribir tus contraseñas para resolverlo.",
+      "pantalla": "Sin contraseñas en papel ✅",
+      "plano": "Manos llenando la sección 'Vida digital' de la carpeta"
+     },
+     {
+      "t": "11-15s",
+      "voz": "Mi Vida en Orden. Diez minutos hoy y tu persona no tendrá que adivinar.",
+      "pantalla": "Mi Vida en Orden · 10 minutos",
+      "plano": "Carpeta y teléfono juntos, ícono de verificación"
+     }
+    ],
+    "prompt_produccion": "Vertical 9:16, close-up of a locked smartphone on a wooden table with generic bank/notification banners (no real brands), then hands writing in the 'Vida digital' section of a navy/cream binder, ending on binder + phone side by side with a check-mark icon. Calm female Spanish voiceover (neutral Latin American accent)."
+   }
+  ]
+ }
+}

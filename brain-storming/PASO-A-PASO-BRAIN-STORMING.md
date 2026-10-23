@@ -127,6 +127,15 @@ Escríbele a Brain:
    - Corre el primer día.
    - Te muestra el borrador de la **BIBLIA** (marca, promesa, reglas). **Apruébala o corrígela:** es lo único que no cambia sin tu orden.
 
+### Atajo: sembrar un nicho ya investigado
+
+Si el nicho ya está investigado (por ejemplo **Mi Vida en Orden**, en `semillas/mi-vida-en-orden/`), no hace falta "busca nichos". Escribe **"siembra mi-vida-en-orden"** y Brain crea:
+- el cerebro con toda la evidencia;
+- la BIBLIA;
+- la primera campaña lista, `P-SEMILLA-01`.
+
+El análisis completo queda en `cerebro/<nicho>/historial/SEMILLA.md`.
+
 ## Paso 6: Programarlo cada día (2 min)
 
 ```bash

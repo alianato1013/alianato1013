@@ -1,0 +1,25 @@
+{
+ "slug": "mi-vida-en-orden",
+ "nombre": "Carpeta 'por si acaso' — Mi Vida en Orden (edición en español de In Order Co.)",
+ "avatar": "Mujer hispana 35-60 en EE. UU./Puerto Rico: es el contacto de emergencia de todos y nadie sabe dónde están sus cosas",
+ "fijado": "",
+ "scorecard": "semilla (investigación del 2026-10-23, ver historial/SEMILLA.md)",
+ "origen": {
+  "paises": ["US"],
+  "keywords": ["emergency binder", "in case of death binder", "when I die folder"]
+ },
+ "organic_keywords": ["carpeta de emergencia", "documentos importantes familia"],
+ "mercados": {
+  "US": {"keywords": ["carpeta de emergencia", "documentos importantes"], "estado": "pendiente", "idioma": "es", "segmento": "hispanohablantes (segmentar por idioma español)"},
+  "PR": {"keywords": ["carpeta de emergencia"], "estado": "pendiente", "idioma": "es"},
+  "GB": {"keywords": ["if I die file", "emergency binder"], "estado": "pendiente", "idioma": "en", "nota": "edición UK en inglés: la siguiente expansión"},
+  "ES": {"keywords": ["carpeta de emergencia", "testamento"], "estado": "pendiente", "idioma": "es"},
+  "IT": {"keywords": ["testamento", "documenti importanti famiglia"], "estado": "pendiente", "idioma": "it", "nota": "océano azul posible; validar con el Cazador"}
+ },
+ "seguimiento_page_ids": [],
+ "excluir_page_ids": [],
+ "tienda": {"store_id": "", "nombre": "Mi Vida en Orden (tienda nueva recomendada)"},
+ "meta": {"ad_account_id": "", "page_id": "", "pixel_id": "", "instagram_user_id": ""},
+ "cpa_objetivo_usd": 16,
+ "precio": {"entrada_usd": 19, "prueba_ab_usd": 23, "rango_aprobado_por_dueno_usd": [17, 23]}
+}
