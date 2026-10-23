@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# Brian Storming: one daily cycle for the active niche.
+# Brain Storming: one daily cycle for the active niche.
 #   data (Espía + competitors + markets + Meta metrics + rules)
 #   -> Bibliotecario updates the brain -> Estratega writes report + proposals
 #   -> verify -> git commit -> Google Drive backup.
 # Nothing is published here: publishing only happens when the owner says "publica <ID>".
-# Cron (06:20 Puerto Rico = 10:20 UTC):  20 10 * * * $HOME/alianato1013/brian-storming/run-diario.sh
+# Cron (06:20 Puerto Rico = 10:20 UTC):  20 10 * * * $HOME/alianato1013/brain-storming/run-diario.sh
 set -uo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
-DATA="${BRIAN_DATA:-$HOME/brian-data}"
+DATA="${BRAIN_DATA:-$HOME/brain-data}"
 export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
-B="python3 $HERE/brian.py"
+B="python3 $HERE/brain.py"
 FECHA="$(date +%F)"
 mkdir -p "$DATA/logs"
 exec > >(tee -a "$DATA/logs/$FECHA.log") 2>&1

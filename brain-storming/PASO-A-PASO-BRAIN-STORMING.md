@@ -1,4 +1,4 @@
-# Brian Storming: paso a paso
+# Brain Storming: paso a paso
 
 **Qué es:** un empleado que se hace experto en **un solo nicho**. Lo estudia todos los días, aprende de tus ventas y te propone:
 - **productos nuevos para el mismo avatar** (la escalera de valor);
@@ -39,9 +39,9 @@ Tú supervisas y decides. **Nada se publica ni gasta dinero sin que escribas "pu
 
 **Cómo aprende el cerebro:** cada anuncio se nombra `BS|propuesta|ángulo|mercado|producto|creativo`. Así el sistema sabe qué ángulo, qué producto y qué mercado vende, y lo resume en `ESTADISTICAS.md`. Ese archivo es la base de los aprendizajes.
 
-**Tus datos viven en el servidor**, en `~/brian-data`, fuera de GitHub:
+**Tus datos viven en el servidor**, en `~/brain-data`, fuera de GitHub:
 - tienen historial de cambios con git (puedes ver cómo evolucionó el cerebro día a día);
-- tienen una copia diaria en Google Drive (`BrianStorming/`).
+- tienen una copia diaria en Google Drive (`BrainStorming/`).
 
 ---
 
@@ -50,21 +50,21 @@ Tú supervisas y decides. **Nada se publica ni gasta dinero sin que escribas "pu
 - El **servidor** del Editor Supremo (`editor-supremo/cloud/PASO-A-PASO-NUBE.md`), con Claude Code con la sesión iniciada y rclone conectado a Drive.
 - **ScrapeCreators** con la llave guardada (`espia-ofertas/PASO-A-PASO-ESPIA.md`, pasos 1 y 3).
 
-## Paso 2: Instalar Brian Storming (2 min)
+## Paso 2: Instalar Brain Storming (2 min)
 
 ```bash
 ssh editor@IP
 cd ~/alianato1013 && git pull
-python3 ~/alianato1013/brian-storming/brian.py init
+python3 ~/alianato1013/brain-storming/brain.py init
 ```
-Esto crea `~/brian-data/` con:
+Esto crea `~/brain-data/` con:
 - `config.json` (límites y reglas);
 - `candidatos.json` (nichos de ejemplo);
 - el manual del agente (`CLAUDE.md`).
 
 **Revisa los límites de dinero** en `config.json`:
 ```bash
-nano ~/brian-data/config.json
+nano ~/brain-data/config.json
 ```
 
 | Límite | Valor por defecto | Qué hace |
@@ -73,24 +73,24 @@ nano ~/brian-data/config.json
 | `max_presupuesto_nuevo_por_dia_usd` | 40 | El total de campañas nuevas que se pueden publicar en un mismo día |
 | `cpa_objetivo_usd_por_defecto` | 12 | Lo que estás dispuesto a pagar por venta (luego se ajusta por nicho en `nicho.json`) |
 
-`brian.py` **se niega** a publicar por encima de estos topes. Solo tú los cambias.
+`brain.py` **se niega** a publicar por encima de estos topes. Solo tú los cambias.
 
 ## Paso 3: Conectar tu cuenta de Meta (20 min, una sola vez)
 
 Se usa un **token de usuario del sistema**: no caduca y solo tiene acceso a lo que tú le asignas.
 
-1. Ve a **developers.facebook.com** → **Mis apps** → **Crear app** → tipo **Otro** → **Empresa** → nombre `brian-storming`. Vincúlala a tu portafolio comercial.
+1. Ve a **developers.facebook.com** → **Mis apps** → **Crear app** → tipo **Otro** → **Empresa** → nombre `brain-storming`. Vincúlala a tu portafolio comercial.
 2. Dentro de la app: **Agregar producto** → **API de marketing**.
-3. Ve a **business.facebook.com** → **Configuración** → **Usuarios** → **Usuarios del sistema** → **Agregar**: nombre `brian`, rol **Administrador**.
-4. Con `brian` seleccionado → **Asignar activos**:
+3. Ve a **business.facebook.com** → **Configuración** → **Usuarios** → **Usuarios del sistema** → **Agregar**: nombre `brain`, rol **Administrador**.
+4. Con `brain` seleccionado → **Asignar activos**:
    - tu **cuenta publicitaria**: control total;
    - tu **página de Facebook**: control total;
    - tu **píxel / conjunto de datos**.
-5. **Generar token** → elige la app `brian-storming` → caducidad **Nunca** → permisos: `ads_management`, `ads_read`, `business_management`, `pages_show_list`, `pages_read_engagement`, `pages_manage_ads` → **Generar**. **Copia el token** (solo se muestra una vez).
+5. **Generar token** → elige la app `brain-storming` → caducidad **Nunca** → permisos: `ads_management`, `ads_read`, `business_management`, `pages_show_list`, `pages_read_engagement`, `pages_manage_ads` → **Generar**. **Copia el token** (solo se muestra una vez).
 6. En el servidor:
    ```bash
-   mkdir -p ~/.config/brian && nano ~/.config/brian/meta_token      # pega el token, guarda
-   chmod 600 ~/.config/brian/meta_token
+   mkdir -p ~/.config/brain && nano ~/.config/brain/meta_token      # pega el token, guarda
+   chmod 600 ~/.config/brain/meta_token
    ```
 7. **Busca los ids** que te pedirá el agente: la cuenta publicitaria (`act_…`, en el Administrador de anuncios), el id de la página y el id del píxel (en el Administrador de eventos).
 
@@ -98,24 +98,24 @@ Se usa un **token de usuario del sistema**: no caduca y solo tiene acceso a lo q
 >
 > La versión de la API (`meta.graph_version`, por defecto `v24.0`) se puede cambiar en `config.json` si Meta la retira.
 
-## Paso 4: Abrir a Brian desde la app de Claude (2 min)
+## Paso 4: Abrir a Brain desde la app de Claude (2 min)
 
 En el servidor:
 ```bash
-tmux new -s brian
-cd ~/brian-data && claude remote-control
+tmux new -s brain
+cd ~/brain-data && claude remote-control
 ```
 - Sal de tmux con **Ctrl+B y luego D**.
-- La sesión aparece en tu **app de Claude Code**, en el PC o el celular. Desde ahí hablas con Brian.
+- La sesión aparece en tu **app de Claude Code**, en el PC o el celular. Desde ahí hablas con Brain.
 - **ImpulTienda:** escribe `/mcp` en esa sesión.
-  - Si aparece **Impultienda**, Brian crea productos y embudos solo.
+  - Si aparece **Impultienda**, Brain crea productos y embudos solo.
   - Si no aparece, esa parte la haces desde la app de Claude donde ya tienes ImpulTienda conectado. El Publicador te dice exactamente qué copiar.
 
 ## Paso 5: Elegir el nicho (una vez, ~30 min)
 
-Escríbele a Brian:
+Escríbele a Brain:
 1. **"busca nichos"**
-   - Brian propone de 6 a 10 candidatos (o usa los tuyos) y **te pide OK** antes de gastar créditos (~10 créditos por candidato).
+   - Brain propone de 6 a 10 candidatos (o usa los tuyos) y **te pide OK** antes de gastar créditos (~10 créditos por candidato).
    - Después te entrega `RECOMENDACION.md`:
      - puntaje con datos reales;
      - durabilidad;
@@ -123,7 +123,7 @@ Escríbele a Brian:
      - océano azul por país;
      - riesgos.
 2. **"fija el nicho <nombre>"**
-   - Brian crea el cerebro y te pide: el `store_id` de ImpulTienda, los ids de Meta del paso 3 y tu CPA objetivo.
+   - Brain crea el cerebro y te pide: el `store_id` de ImpulTienda, los ids de Meta del paso 3 y tu CPA objetivo.
    - Corre el primer día.
    - Te muestra el borrador de la **BIBLIA** (marca, promesa, reglas). **Apruébala o corrígela:** es lo único que no cambia sin tu orden.
 
@@ -134,10 +134,10 @@ crontab -e
 ```
 Añade esta línea:
 ```
-20 10 * * * /home/editor/alianato1013/brian-storming/run-diario.sh >/dev/null 2>&1
+20 10 * * * /home/editor/alianato1013/brain-storming/run-diario.sh >/dev/null 2>&1
 ```
 - Corre a las **10:20 UTC = 6:20 a. m. en Puerto Rico**.
-- Si también tienes el Espía solo programado, **quítalo**: Brian ya lo incluye.
+- Si también tienes el Espía solo programado, **quítalo**: Brain ya lo incluye.
 
 ## Paso 7: Tu rutina (5–10 min al día)
 
@@ -154,7 +154,7 @@ Añade esta línea:
 | **"qué sabe el cerebro de <tema>"** | Responde citando las fuentes |
 | **"cambia la biblia del nicho: …"** | Cambia una regla fija de la marca |
 
-**Puedes decir "publica" sin "prepara":** Brian prepara y publica en el mismo paso. Usa "prepara" cuando quieras ver los creativos antes.
+**Puedes decir "publica" sin "prepara":** Brain prepara y publica en el mismo paso. Usa "prepara" cuando quieras ver los creativos antes.
 
 ---
 
@@ -174,8 +174,8 @@ Son estimaciones. El gasto real de créditos aparece en cada `EVIDENCIA.md` y en
 - **No instala nada:** solo Python estándar y Claude Code, que ya tienes.
 - **Las llaves viven solo en el servidor**, con permisos privados:
   - ScrapeCreators en `~/.config/espia/`;
-  - Meta en `~/.config/brian/`.
-- **Los datos del negocio no se suben a GitHub:** viven en `~/brian-data` y en tu Drive.
+  - Meta en `~/.config/brain/`.
+- **Los datos del negocio no se suben a GitHub:** viven en `~/brain-data` y en tu Drive.
 - **En las corridas automáticas Claude solo puede leer y escribir archivos.** No tiene terminal, ni internet, ni puede publicar.
 - **Para publicar hacen falta tres cosas:**
   1. tu "publica <ID>";

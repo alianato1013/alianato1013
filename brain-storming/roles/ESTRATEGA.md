@@ -42,7 +42,7 @@ Cada propuesta indica **qué aprendizajes del cerebro usa**, en el campo `aprend
 Usa estos encabezados **exactos**; el verificador los busca:
 
 ```
-# Brian Storming — <nicho> — <fecha>
+# Brain Storming — <nicho> — <fecha>
 ## 1. Resumen (5 líneas)
 ## 2. Lo que el cerebro aprendió hoy        (copia el resumen del Bibliotecario en historial/<fecha>.md)
 ## 3. Mercado y competencia               (competidores que suben/bajan, ofertas nuevas, ideas orgánicas)

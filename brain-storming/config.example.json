@@ -1,5 +1,5 @@
 {
-  "_instrucciones": "Copia de trabajo en ~/brian-data/config.json (la crea 'brian.py init'). Los límites en USD son topes duros: brian.py se niega a publicar por encima.",
+  "_instrucciones": "Copia de trabajo en ~/brain-data/config.json (la crea 'brain.py init'). Los límites en USD son topes duros: brain.py se niega a publicar por encima.",
   "nicho_activo": "",
   "mercados_extra": ["US", "PR", "ES", "MX", "CO", "CL", "AR", "PE", "CA", "GB", "AU", "DE", "FR", "IT", "PT", "BR"],
 
@@ -51,5 +51,5 @@
     "max_credits_per_run": 80
   },
 
-  "drive_folder": "gdrive:BrianStorming"
+  "drive_folder": "gdrive:BrainStorming"
 }

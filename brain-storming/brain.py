@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Brian Storming: niche-expert operating system built on top of the Espia.
+"""Brain Storming: niche-expert operating system built on top of the Espia.
 
 One niche, one avatar, many products and markets over the years. This tool does the
 deterministic part (collect real data, keep the brain's history, compute metrics and
@@ -7,7 +7,7 @@ rules, validate proposals, publish to Meta within hard caps). The judgment part
 (write the brain, propose products/creatives/markets) is done by Claude following
 roles/*.md, and nothing is published without the owner's "publica <ID>".
 
-Standard library only. Data lives OUTSIDE the repo (default ~/brian-data), versioned
+Standard library only. Data lives OUTSIDE the repo (default ~/brain-data), versioned
 with a local git repository and backed up to Google Drive.
 """
 import argparse
@@ -32,8 +32,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "espia-ofertas"))
 import espia  # noqa: E402
 
-DATA = os.path.expanduser(os.environ.get("BRIAN_DATA", "~/brian-data"))
-META_TOKEN_FILE = os.path.expanduser("~/.config/brian/meta_token")
+DATA = os.path.expanduser(os.environ.get("BRAIN_DATA", "~/brain-data"))
+META_TOKEN_FILE = os.path.expanduser("~/.config/brain/meta_token")
 GRAPH_BASE = os.environ.get("GRAPH_BASE_URL", "https://graph.facebook.com")
 GRAPH_VIDEO_BASE = os.environ.get("GRAPH_VIDEO_BASE_URL", "https://graph-video.facebook.com")
 PURCHASE_TYPES = ["offsite_conversion.fb_pixel_purchase", "purchase", "omni_purchase"]
@@ -68,14 +68,14 @@ def jsave(path, obj):
 def config():
     cfg = jload(os.path.join(DATA, "config.json"))
     if cfg is None:
-        sys.exit(f"No config. Run: python3 brian.py init   (data dir: {DATA})")
+        sys.exit(f"No config. Run: python3 brain.py init   (data dir: {DATA})")
     return cfg
 
 
 def niche_dir(cfg, slug=None):
     slug = slug or cfg.get("nicho_activo")
     if not slug:
-        sys.exit("No active niche. Use: python3 brian.py fijar-nicho ...")
+        sys.exit("No active niche. Use: python3 brain.py fijar-nicho ...")
     d = os.path.join(DATA, "cerebro", slug)
     if not os.path.isdir(d):
         sys.exit(f"Niche folder missing: {d}")
@@ -115,8 +115,8 @@ def cmd_init(args):
         f.write("**/raw/\n**/raw-seguimiento/\n**/landings/\n**/assets/\n*.tmp\n")
     if not os.path.isdir(os.path.join(DATA, ".git")):
         subprocess.run(["git", "init", "-q", DATA], check=True)
-        subprocess.run(["git", "-C", DATA, "config", "user.name", "Brian Storming"], check=True)
-        subprocess.run(["git", "-C", DATA, "config", "user.email", "brian@localhost"], check=True)
+        subprocess.run(["git", "-C", DATA, "config", "user.name", "Brain Storming"], check=True)
+        subprocess.run(["git", "-C", DATA, "config", "user.email", "brain@localhost"], check=True)
     git_commit("init")
     log(f"Ready: {DATA}")
 
@@ -376,7 +376,7 @@ def write_summary(cfg, nj, d, day, fecha, errors):
     comp = jload(os.path.join(d, "COMPETIDORES.json"), {})
     mk = jload(os.path.join(d, "MERCADOS.json"), {})
     L = [f"# Datos del día — {nj['nombre']} — {fecha}", "",
-         "Generado por `brian.py diario`. Todo sale de `dossier.json`, `COMPETIDORES.json`, "
+         "Generado por `brain.py diario`. Todo sale de `dossier.json`, `COMPETIDORES.json`, "
          "`MERCADOS.json`, `metricas.json` y `senales.json`.", "",
          "## Competidores (historial)", "",
          "| Anunciante | País | Anuncios hoy | Cambio 7 días | Mediana días | Biblioteca |",
@@ -610,7 +610,7 @@ def stats_md(perf, d):
                 for f, x in day.items():
                     groups[g][parts[g]][f] += x
     L = ["# Estadísticas acumuladas (toda la vida, de RENDIMIENTO.json)", "",
-         "Generado por `brian.py`. No editar a mano.", ""]
+         "Generado por `brain.py`. No editar a mano.", ""]
     for g, rows in groups.items():
         L += [f"## Por {g}", "", f"| {g} | Gasto | Compras | CPA | Ingresos | ROAS | CTR % |",
               "|---|---|---|---|---|---|---|"]
@@ -909,7 +909,7 @@ def publish_campaign(cfg, nj, d, p, m, acct, res):
     meta, lim = p["meta"], cfg["limites"]
     if not meta.get("link"):
         raise RuntimeError("falta meta.link (el link del embudo/landing). "
-                           "Usa: brian.py set <ID> --link https://...")
+                           "Usa: brain.py set <ID> --link https://...")
     missing = [a["creativo"] for a in meta["anuncios"] if not a.get("media")]
     if missing:
         raise RuntimeError(f"faltan medios para: {', '.join(missing)} (usa 'prepara' primero)")
@@ -1038,7 +1038,7 @@ def cmd_estado(args):
 
 
 def main():
-    p = argparse.ArgumentParser(description="Brian Storming")
+    p = argparse.ArgumentParser(description="Brain Storming")
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("init").set_defaults(fn=cmd_init)
     s = sub.add_parser("nichos")

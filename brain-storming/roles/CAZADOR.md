@@ -6,14 +6,14 @@ Se cambia solo si el dueño escribe "cambia las reglas del cazador: …".
 
 ## Fase 1: Evaluar candidatos ("busca nichos")
 
-1. **Si el dueño no trajo candidatos, propón de 6 a 10** en `~/brian-data/candidatos.json`, con el mismo formato del ejemplo:
+1. **Si el dueño no trajo candidatos, propón de 6 a 10** en `~/brain-data/candidatos.json`, con el mismo formato del ejemplo:
    - Piensa en dolores **permanentes**: relaciones, crianza, salud emocional, dinero personal, oficios y habilidades, mascotas, envejecimiento, fe, productividad.
    - Evita las modas.
    - Evita los nichos que Meta restringe fuerte: salud con promesas médicas, pérdida de peso con antes/después, dinero rápido y criptomonedas.
    - **Muéstrale la lista al dueño y espera su OK** antes de gastar créditos.
 2. **Ejecuta:**
    ```
-   python3 ~/alianato1013/brian-storming/brian.py nichos
+   python3 ~/alianato1013/brain-storming/brain.py nichos
    ```
 3. **Lee** `nichos/<fecha>/SCORECARD.md` y `scorecard.json`.
 4. **Escribe** `nichos/<fecha>/RECOMENDACION.md` con esta estructura:
@@ -31,7 +31,7 @@ Se cambia solo si el dueño escribe "cambia las reglas del cazador: …".
 
 1. **Ejecuta:**
    ```
-   python3 ~/alianato1013/brian-storming/brian.py fijar-nicho --fecha <fecha del scorecard> --nombre "<nombre exacto>" --slug <slug-corto>
+   python3 ~/alianato1013/brain-storming/brain.py fijar-nicho --fecha <fecha del scorecard> --nombre "<nombre exacto>" --slug <slug-corto>
    ```
 2. **Pide al dueño los datos de su cuenta** y escríbelos en `cerebro/<slug>/nicho.json`:
    - `tienda.store_id` (con su OK puedes buscarlo con `impultienda_listar_tiendas`);
@@ -41,7 +41,7 @@ Se cambia solo si el dueño escribe "cambia las reglas del cazador: …".
 3. **Pide 1–3 `organic_keywords`** en el idioma de la oferta, si faltan.
 4. **Corre el primer día:**
    ```
-   bash ~/alianato1013/brian-storming/run-diario.sh
+   bash ~/alianato1013/brain-storming/run-diario.sh
    ```
    El Bibliotecario y el Estratega llenan el cerebro con datos reales.
 5. **Escribe un borrador de `BIBLIA.md`** con lo que ya sabes y **marca las líneas pendientes con `[PENDIENTE]`**. Muéstraselo al dueño: la biblia solo queda fija con su OK.

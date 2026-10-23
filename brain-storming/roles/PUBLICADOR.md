@@ -4,18 +4,18 @@
 
 Se cambia solo si el dueño escribe "cambia las reglas del publicador: …".
 
-Los comandos van con `B=python3 ~/alianato1013/brian-storming/brian.py`.
+Los comandos van con `B=python3 ~/alianato1013/brain-storming/brain.py`.
 
 ## Reglas de oro
 
 1. **El permiso es exacto.** "publica <ID>" autoriza **todas** las escrituras que esa propuesta describe y ninguna otra. Si algo no está en la propuesta, pregunta.
-2. **Los límites de dinero los aplica `brian.py`:**
+2. **Los límites de dinero los aplica `brain.py`:**
    - presupuesto por conjunto;
    - presupuesto nuevo por día;
    - moneda de la cuenta.
 
    Si se niega, informa y **no busques la forma de saltarlo**.
-3. **Si una escritura falla, no improvises otra "para que funcione".** Informa qué falló y qué quedó hecho. `brian.py publica` es reanudable: lo ya creado no se duplica.
+3. **Si una escritura falla, no improvises otra "para que funcione".** Informa qué falló y qué quedó hecho. `brain.py publica` es reanudable: lo ya creado no se duplica.
 4. **Todo queda registrado** en la propuesta (`resultado`), en `DECISIONES.md` y en git.
 
 ## "prepara <ID>": deja todo listo, sin gastar dinero en anuncios
@@ -39,7 +39,7 @@ Los comandos van con `B=python3 ~/alianato1013/brian-storming/brian.py`.
 
    **Revisa cada medio contra la BIBLIA** (estilo, palabras prohibidas, políticas). Si no cumple, regénéralo.
 
-   Si no hay herramienta de generación, el dueño sube los archivos a Drive (`BrianStorming/assets/<ID>/`) y tú los traes con `rclone copy`.
+   Si no hay herramienta de generación, el dueño sube los archivos a Drive (`BrainStorming/assets/<ID>/`) y tú los traes con `rclone copy`.
 4. **Simula la publicación:** `$B publica <ID> --dry-run`. Tiene que salir sin errores.
 5. **Marca la propuesta:** `$B set <ID> --estado preparada`.
 6. **Muéstrale al dueño:**
