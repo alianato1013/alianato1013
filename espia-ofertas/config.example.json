@@ -1,0 +1,51 @@
+{
+  "_instrucciones": "Copia este archivo como config.json y edítalo. Los nichos de abajo son EJEMPLOS basados en tus tiendas: cámbialos por los tuyos. ad_keywords = palabras del mercado de ORIGEN (donde está el high ticket); organic_keywords = palabras en el idioma de TU oferta low ticket.",
+
+  "niches": [
+    {
+      "name": "Relaciones de pareja (modelo para Entre Vínculos)",
+      "notes": "Avatar: mujer 30-55 con relación desgastada o ruptura reciente.",
+      "source_countries": ["US"],
+      "ad_keywords": ["relationship coaching", "save your marriage", "attachment style"],
+      "organic_keywords": ["apego ansioso", "salvar mi relación"]
+    },
+    {
+      "name": "Repostería y cocina (modelo para Emma Gourmet Lab)",
+      "notes": "Avatar: mujer 30-60 que quiere vender postres desde casa.",
+      "source_countries": ["US"],
+      "ad_keywords": ["baking business course", "sell desserts from home", "cake decorating course"],
+      "organic_keywords": ["postres para vender", "negocio de repostería desde casa"]
+    }
+  ],
+
+  "candidate_markets": ["US", "PR", "ES", "MX", "CO", "CL", "AR", "PE", "UY", "CR", "PA", "DO",
+                        "CA", "GB", "AU", "DE", "FR", "IT", "PT", "BR"],
+
+  "min_active_ads": 100,
+  "high_ticket_min_price": 97,
+  "ad_language": "",
+  "search_type": "keyword_unordered",
+  "search_pages": 2,
+  "advertisers_to_check": 6,
+  "max_pages_per_advertiser": 5,
+  "stop_at_threshold": true,
+  "winners_per_niche": 2,
+  "creatives_per_winner": 3,
+  "creatives_kept": 8,
+  "exclude_page_ids": [],
+
+  "tiktok_date_posted": "this-month",
+  "tiktok_region": "",
+  "tiktok_pages": 1,
+  "tiktok_min_plays": 50000,
+  "tiktok_transcripts": 3,
+  "instagram_date_posted": "last-month",
+  "instagram_pages": 1,
+  "instagram_min_likes": 500,
+  "instagram_transcripts": 2,
+  "organic_kept": 10,
+
+  "landing_text_chars": 4000,
+  "max_credits_per_run": 150,
+  "drive_folder": "gdrive:Espia"
+}
