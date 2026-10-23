@@ -1,0 +1,55 @@
+{
+  "_instrucciones": "Copia de trabajo en ~/brian-data/config.json (la crea 'brian.py init'). Los límites en USD son topes duros: brian.py se niega a publicar por encima.",
+  "nicho_activo": "",
+  "mercados_extra": ["US", "PR", "ES", "MX", "CO", "CL", "AR", "PE", "CA", "GB", "AU", "DE", "FR", "IT", "PT", "BR"],
+
+  "limites": {
+    "max_presupuesto_diario_por_conjunto_usd": 20,
+    "max_presupuesto_nuevo_por_dia_usd": 40,
+    "max_propuestas_por_dia": 3
+  },
+
+  "reglas": {
+    "cpa_objetivo_usd_por_defecto": 12,
+    "apagar_sin_compras_x_cpa": 2.0,
+    "apagar_cpa_alto_x": 1.5,
+    "apagar_cpa_alto_min_gasto_x_cpa": 3.0,
+    "escalar_min_compras_3d": 3,
+    "escalar_pct": 20,
+    "expandir_mercado_min_compras_semana": 20
+  },
+
+  "meta": { "graph_version": "v24.0" },
+
+  "cazador": { "max_creditos": 150 },
+
+  "seguimiento": { "max_creditos": 30, "keywords_por_mercado": 1 },
+
+  "espia": {
+    "min_active_ads": 100,
+    "high_ticket_min_price": 97,
+    "ad_language": "",
+    "search_type": "keyword_unordered",
+    "search_pages": 2,
+    "advertisers_to_check": 6,
+    "max_pages_per_advertiser": 5,
+    "stop_at_threshold": true,
+    "winners_per_niche": 2,
+    "creatives_per_winner": 3,
+    "creatives_kept": 8,
+    "tiktok_date_posted": "this-month",
+    "tiktok_region": "",
+    "tiktok_pages": 1,
+    "tiktok_min_plays": 50000,
+    "tiktok_transcripts": 3,
+    "instagram_date_posted": "last-month",
+    "instagram_pages": 1,
+    "instagram_min_likes": 500,
+    "instagram_transcripts": 2,
+    "organic_kept": 10,
+    "landing_text_chars": 4000,
+    "max_credits_per_run": 80
+  },
+
+  "drive_folder": "gdrive:BrianStorming"
+}

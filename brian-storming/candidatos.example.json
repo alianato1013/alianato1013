@@ -1,0 +1,27 @@
+{
+  "_instrucciones": "Nichos candidatos para que el Cazador los puntúe con datos reales. keywords_origen en el idioma del país de origen; destinos = país -> palabras en SU idioma; organic_keywords en el idioma de tu oferta. Son EJEMPLOS: cámbialos o pídele al agente que proponga candidatos.",
+  "pais_origen": "US",
+  "candidatos": [
+    {
+      "nombre": "Apego ansioso en pareja",
+      "avatar": "Mujer 28-50 con ansiedad en sus relaciones",
+      "keywords_origen": ["anxious attachment", "stop overthinking relationship"],
+      "destinos": { "MX": ["apego ansioso"], "ES": ["apego ansioso"], "BR": ["apego ansioso relacionamento"] },
+      "organic_keywords": ["apego ansioso"]
+    },
+    {
+      "nombre": "Vender postres desde casa",
+      "avatar": "Mujer 30-60 que quiere ingresos extra horneando",
+      "keywords_origen": ["home bakery business", "sell desserts from home"],
+      "destinos": { "MX": ["vender postres desde casa"], "ES": ["vender postres desde casa"], "CO": ["negocio de postres"] },
+      "organic_keywords": ["postres para vender"]
+    },
+    {
+      "nombre": "Disciplina positiva (crianza)",
+      "avatar": "Madre 28-45 con hijos de 2 a 10 años y rabietas",
+      "keywords_origen": ["gentle parenting course", "toddler tantrums"],
+      "destinos": { "MX": ["crianza respetuosa"], "ES": ["disciplina positiva"], "CO": ["crianza respetuosa"] },
+      "organic_keywords": ["rabietas niños"]
+    }
+  ]
+}
