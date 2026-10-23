@@ -148,6 +148,12 @@ Añade esta línea:
 - Corre a las **10:20 UTC = 6:20 a. m. en Puerto Rico**.
 - Si también tienes el Espía solo programado, **quítalo**: Brain ya lo incluye.
 
+### Recomendado: ahorro de tokens
+
+Instala `ahorro-tokens/` (guía `ahorro-tokens/PASO-A-PASO-AHORRO.md`). Con eso:
+- las corridas diarias usan **Sonnet** para el Bibliotecario y **Opus** para el Estratega;
+- se pagan con una llave de API con tope por corrida, así **nunca se detienen** por los límites de tu plan.
+
 ## Paso 7: Tu rutina (5–10 min al día)
 
 | Escribes | Pasa |

@@ -22,7 +22,9 @@ python3 "$HERE/espia.py" scan --config "$CONFIG" --out "$RUN" || { echo "scan fa
 PROMPT="Sigue al pie de la letra las instrucciones de $HERE/ANALISTA.md. La carpeta del día es $RUN. Lee $RUN/dossier.json y $RUN/EVIDENCIA.md y escribe $RUN/REPORTE.md."
 for attempt in 1 2; do
   echo "== $(date) analyst (attempt $attempt)"
-  ( cd "$RUN" && claude -p "$PROMPT" \
+  AUTO="$HERE/../ahorro-tokens/claude-auto.sh"   # model + API-key billing when installed
+  CLAUDE_CMD=(claude -p "$PROMPT"); [[ -x "$AUTO" ]] && CLAUDE_CMD=("$AUTO" critico "$PROMPT")
+  ( cd "$RUN" && "${CLAUDE_CMD[@]}" \
       --allowedTools "Read" "Write" "Edit" "Glob" "Grep" \
       --add-dir "$HERE" --permission-mode acceptEdits ) > "$RUN/analyst-$attempt.txt" 2>&1
   if [[ -f "$RUN/REPORTE.md" ]] && CHECK="$(python3 "$HERE/espia.py" check-report --run "$RUN")"; then
