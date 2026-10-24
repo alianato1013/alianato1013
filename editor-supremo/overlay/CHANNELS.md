@@ -29,10 +29,14 @@ over a script "for my channel".
   Pexels, Pixabay). For every line the archive cannot cover, generate on the **own GPU**:
   1. write `projects/<id>/assets/ai_batch.jsonl`, one line per image:
      `{"prompt": "<subject of the line>", "out": "projects/<id>/assets/images/<scene>.png"}`;
-  2. tell the user: "Necesito la GPU: enciende el pod en RunPod y dame IP y puerto";
+  2. if the Runpod MCP tools are available (official plugin `runpod@runpod`), start the user's
+     **existing** GPU pod yourself and read its public IP and SSH port. Never create a new pod,
+     change its GPU, or start any other pod without the user's explicit OK. Without the tools,
+     tell the user: "Necesito la GPU: enciende el pod en Runpod y dame IP y puerto";
   3. run `bash ~/alianato1013/estudio-gpu/tunel.sh <IP> <PUERTO>`;
   4. run `python scripts/channel_assets/gen_image.py --channel <playbook> --batch projects/<id>/assets/ai_batch.jsonl --takes 2`;
-  5. run `bash ~/alianato1013/estudio-gpu/tunel.sh --cerrar`. The pod stops itself after 20 idle minutes.
+  5. run `bash ~/alianato1013/estudio-gpu/tunel.sh --cerrar`, then stop the pod with the Runpod
+     tools if you have them. As a safety net, the pod also stops itself after 20 idle minutes.
 
   Each image's sidecar `.json` goes into `asset_manifest` (license and model). Paid image or video
   APIs (KIE, fal, Higgsfield, etc.) are used **only** if the user approves them at the proposal gate,

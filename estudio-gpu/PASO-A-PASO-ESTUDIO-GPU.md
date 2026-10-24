@@ -102,6 +102,26 @@ Usa la IP y el puerto de tu pod. Tiene que terminar con:
 OK: http://127.0.0.1:8188 ready with Qwen-Image + Lightning
 ```
 
+### 4. Opcional pero recomendado: que el agente encienda y apague el pod solo (5 min)
+
+Runpod tiene un plugin oficial para Claude Code ([agents.runpod.io](https://agents.runpod.io/), código en [runpod/runpod-plugins-official](https://github.com/runpod/runpod-plugins-official)).
+
+**Instálalo en el Claude Code de tu servidor,** no en tu PC ni en esta sesión:
+```bash
+ssh editor@IP_DE_TU_SERVIDOR
+claude plugin marketplace add runpod/runpod-plugins-official
+claude plugin install runpod@runpod
+claude plugin list | grep -A2 'runpod@runpod'      # debe decir: Status: ✔ enabled
+```
+
+Después, en la sesión del editor (la que controlas desde la app):
+1. Escribe `/reload-plugins`.
+2. Escribe `/mcp` → **runpod** → **Sign in with Runpod**, y aprueba en el navegador. El acceso usa OAuth: **no se crea ni se guarda ninguna llave**.
+
+**Cómo queda:** el agente enciende **tu** pod, toma la IP y el puerto, genera las imágenes y lo apaga. Tú no haces nada.
+
+Por regla del sistema (`CHANNELS.md`), el agente **solo** puede encender y apagar el pod que ya creaste. **No puede crear pods nuevos ni cambiar la GPU sin tu OK.**
+
 ---
 
 ## Uso en cada video (lo que harás tú: 1 minuto)
