@@ -142,6 +142,12 @@ Guía: `estudio-gpu/PASO-A-PASO-ESTUDIO-GPU.md`.
   1. `ssh editor@IP "python3 ~/alianato1013/brain-storming/brain.py init"`;
   2. la llave de ScrapeCreators la pega ella con `ssh -t editor@IP "mkdir -p ~/.config/espia && nano ~/.config/espia/scrapecreators.key"`;
   3. siembra el nicho: `ssh editor@IP "python3 ~/alianato1013/brain-storming/brain.py sembrar mi-vida-en-orden"`.
+- **Segunda sesión en la app, solo para Brain:** abre `ssh -t editor@IP "tmux new -As brain"` y dentro ejecuta `cd ~/brain-data && claude remote-control`. Después Ctrl+B y D.
+  Al final ella debe ver **dos sesiones** en su app de Claude:
+  - **Editor** (YouTube), en `~/OpenMontage`;
+  - **Brain** (productos digitales), en `~/brain-data`.
+
+  Verifícalo con ella.
 - El token de Meta y la programación diaria (cron) se hacen solo cuando ella lo pida. Siguen sus guías.
 
 ## Fase 9: Prueba final
