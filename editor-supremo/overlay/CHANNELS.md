@@ -24,6 +24,19 @@ over a script "for my channel".
   run `python scripts/channel_cloud/youtube_upload.py upload --project projects/<id>` ONLY after the user
   says to upload ("sube a YouTube"). Default privacy: private, with `publish_at` if the user gave a date.
   It refuses to upload unless the render audit is PASS and the authorized channel matches the project.
+- **Images at the assets stage (cost rule):** follow the bible's sourcing order. Archive and free
+  stock come first, through OpenMontage's stock sources (LOC, NARA, Internet Archive, Wikimedia,
+  Pexels, Pixabay). For every line the archive cannot cover, generate on the **own GPU**:
+  1. write `projects/<id>/assets/ai_batch.jsonl`, one line per image:
+     `{"prompt": "<subject of the line>", "out": "projects/<id>/assets/images/<scene>.png"}`;
+  2. tell the user: "Necesito la GPU: enciende el pod en RunPod y dame IP y puerto";
+  3. run `bash ~/alianato1013/estudio-gpu/tunel.sh <IP> <PUERTO>`;
+  4. run `python scripts/channel_assets/gen_image.py --channel <playbook> --batch projects/<id>/assets/ai_batch.jsonl --takes 2`;
+  5. run `bash ~/alianato1013/estudio-gpu/tunel.sh --cerrar`. The pod stops itself after 20 idle minutes.
+
+  Each image's sidecar `.json` goes into `asset_manifest` (license and model). Paid image or video
+  APIs (KIE, fal, Higgsfield, etc.) are used **only** if the user approves them at the proposal gate,
+  with their cost shown. Assembly and render stay on this server (Remotion, CPU) and never need the GPU.
 - **Delivery (cloud server):** after the upload (or when the user says not to upload), run
   `bash scripts/channel_cloud/deliver.sh <project-id>`. It uploads the video and its package to
   cloud storage, verifies the copy and frees the server disk. It refuses to run unless the render
