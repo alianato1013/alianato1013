@@ -43,6 +43,7 @@ Este archivo pasa el trabajo de la fábrica de productos a un chat nuevo, dedica
 | Lanzamiento en inglés | "Digamos, completa montarla. Para el mercado inglés. Tenemos 12 países que podemos probar. Ármame el plan completo. Desde cero para desarrollarla y tenerla corriendo como mínimo o mejor dicho, como máximo de tiempo en 2 días." |
 | Quién hace la publicidad | "lo que quiero saber es quién crea los creativos. O las imágenes estáticas. Para poderlos poner como anuncios dentro de la campaña de Meta Ads. Luego de que se analice la estrategia de la oferta ganadora. De High Ticket a Low Ticket. Mercado e idioma. ¿Quién va a hacer esa publicidad? ¿Quién hace el marketing? ¿Quién lo analiza?" |
 | Separar el chat | "¿Crees que sería bueno desvincularlo o lo dejo aquí porque ya comenzamos aquí a hablar?" → aceptó la recomendación de separarlo y pidió que el traspaso quede "exacto con la información correcta y que no se asuma, ni se cambie, ni se interprete algo diferente". |
+| Verla como AYOP | "no me contestaste si es posible que yo pueda ver este sistema como está AYPO, que yo lo veo. Y me gusta, porque si tengo que ejecutar algo, pues lo ejecuto." → quiere una pantalla visual de la fábrica, como la de AYOP, desde donde ella pueda ver y ejecutar. |
 
 **Los 12 países del inglés** son los de la propuesta del agente que ella adoptó al decir "Tenemos 12 países":
 - **nativos:** US, CA, GB, IE, AU, NZ, SG;
@@ -82,7 +83,7 @@ Se generan con `python3 lanzamiento-en/producto/build_binder.py`. El contenido e
 | Presupuesto de prueba | ~4 días a US$40/día (≈ US$160): US$20/día para US y US$20/día para CA+GB+IE+AU+NZ+SG; los nórdicos y NL en la semana 2 |
 | Reglas para cortar | CPC > US$1,50 después de US$15 → cortar; conversión de la landing < 2% después de 100 clics → arreglar la landing |
 | Agente nuevo "Creativo" + motor gratis de estáticos | Produce los estáticos 1:1 y 4:5 y los videos 9:16 a partir de las páginas reales del producto, por mercado e idioma. Así el Estratega solo piensa y el Publicador solo publica. La dueña lo preguntó; aún no dijo "sí" |
-| Tablero de la fábrica como artefacto | Muestra en qué paso está cada producto, la cola de propuestas, el gasto contra los topes y los resultados por mercado. No está probado si el servidor puede actualizarlo solo; lo seguro es que lo actualice la sesión Brain al final de cada ciclo |
+| Pantalla de la fábrica "como AYOP" | Ella lo pidió (ver sección 2). Falta decidir **dónde** vive. Opción A: una sección nueva **dentro de AYOP**, con sus botones ("busca nichos", "reporte de hoy", "prepara", "publica"); necesita el código de AYOP, que no está en este repositorio. Opción B: un artefacto de claude.ai, que muestra el estado pero cuyos botones no pueden ejecutar nada en el servidor. Recomendación del agente: A, si el código de AYOP está disponible. Pregúntale antes de construir |
 | Los 5 ángulos de los anuncios en inglés | 1) "When I die folder / 5 things"; 2) "You're everyone's emergency contact. Who's yours?"; 3) "do it now or leave it to the kids"; 4) mascotas; 5) "your phone is the key to your life". Modelados de los videos orgánicos de la semilla. No usar frases sobre atributos personales, como "Do you live alone?" |
 
 ## 5. PENDIENTE, en este orden
