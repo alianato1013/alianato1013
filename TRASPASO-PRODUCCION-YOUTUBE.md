@@ -32,9 +32,9 @@ Este archivo pasa la producción de los canales a un chat aparte. El chat anteri
   - El plan de 14 semanas de Hard Times Heritage está montado dentro de AYOP: 42 videos del 26 de octubre al 29 de enero, lunes, miércoles y viernes a las 10:00 a. m. ET.
   - El video #1 (26 de octubre) es "25 "Poor Man" Money Habits 1950s Mothers Used That Seniors on Fixed Incomes Need Now".
 - **HECHO:** también existe su artefacto "Plan Sumerian en AYOP" (https://claude.ai/artifact/ALrnmgXNy4U6ErQduXgVHT). **No se leyó en el chat anterior.** Léelo antes de trabajar en Sumerian Vault.
+- **DECISIÓN DE LA DUEÑA:** "Job System" y AYOP son lo mismo. Ella dijo: "Sí, es lo mismo, es que me equivoqué."
 - **NO VALIDADO:**
   - dónde vive el código de AYOP (no está en este repositorio);
-  - si "Job System", que ella mencionó, es AYOP;
   - qué herramientas usa AYOP hoy para la voz y las imágenes.
 
   Pregúntaselo.
