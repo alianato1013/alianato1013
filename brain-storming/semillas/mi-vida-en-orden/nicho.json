@@ -5,21 +5,100 @@
  "fijado": "",
  "scorecard": "semilla (investigación del 2026-10-23, ver historial/SEMILLA.md)",
  "origen": {
-  "paises": ["US"],
-  "keywords": ["emergency binder", "in case of death binder", "when I die folder"]
+  "paises": [
+   "US"
+  ],
+  "keywords": [
+   "emergency binder",
+   "in case of death binder",
+   "when I die folder"
+  ]
  },
- "organic_keywords": ["carpeta de emergencia", "documentos importantes familia"],
+ "organic_keywords": [
+  "carpeta de emergencia",
+  "documentos importantes familia"
+ ],
  "mercados": {
-  "US": {"keywords": ["carpeta de emergencia", "documentos importantes"], "estado": "pendiente", "idioma": "es", "segmento": "hispanohablantes (segmentar por idioma español)"},
-  "PR": {"keywords": ["carpeta de emergencia"], "estado": "pendiente", "idioma": "es"},
-  "GB": {"keywords": ["if I die file", "emergency binder"], "estado": "pendiente", "idioma": "en", "nota": "edición UK en inglés: la siguiente expansión"},
-  "ES": {"keywords": ["carpeta de emergencia", "testamento"], "estado": "pendiente", "idioma": "es"},
-  "IT": {"keywords": ["testamento", "documenti importanti famiglia"], "estado": "pendiente", "idioma": "it", "nota": "océano azul posible; validar con el Cazador"}
+  "US": {
+   "keywords": [
+    "carpeta de emergencia",
+    "documentos importantes"
+   ],
+   "estado": "pendiente",
+   "idioma": "es",
+   "segmento": "hispanohablantes (segmentar por idioma español)"
+  },
+  "PR": {
+   "keywords": [
+    "carpeta de emergencia"
+   ],
+   "estado": "pendiente",
+   "idioma": "es"
+  },
+  "GB": {
+   "keywords": [
+    "if I die file",
+    "emergency binder"
+   ],
+   "estado": "pendiente",
+   "idioma": "en",
+   "nota": "edición UK en inglés: la siguiente expansión"
+  },
+  "ES": {
+   "keywords": [
+    "carpeta de emergencia",
+    "testamento"
+   ],
+   "estado": "pendiente",
+   "idioma": "es"
+  },
+  "IT": {
+   "keywords": [
+    "testamento",
+    "documenti importanti famiglia"
+   ],
+   "estado": "pendiente",
+   "idioma": "it",
+   "nota": "océano azul posible; validar con el Cazador"
+  },
+  "CA": {
+   "keywords": [
+    "emergency binder",
+    "in case of death binder"
+   ],
+   "estado": "pendiente",
+   "idioma": "en",
+   "nota": "29,3% hogares de 1 persona (StatCan 2021); mismo producto en inglés que US/UK; francés (Quebec) más adelante"
+  },
+  "PT": {
+   "keywords": [
+    "pasta de emergência",
+    "documentos importantes família"
+   ],
+   "estado": "pendiente",
+   "idioma": "pt",
+   "nota": "validar; Brasil solo con precio por país"
+  }
  },
  "seguimiento_page_ids": [],
  "excluir_page_ids": [],
- "tienda": {"store_id": "", "nombre": "Mi Vida en Orden (tienda nueva recomendada)"},
- "meta": {"ad_account_id": "", "page_id": "", "pixel_id": "", "instagram_user_id": ""},
+ "tienda": {
+  "store_id": "",
+  "nombre": "Mi Vida en Orden (tienda nueva recomendada)"
+ },
+ "meta": {
+  "ad_account_id": "",
+  "page_id": "",
+  "pixel_id": "",
+  "instagram_user_id": ""
+ },
  "cpa_objetivo_usd": 16,
- "precio": {"entrada_usd": 19, "prueba_ab_usd": 23, "rango_aprobado_por_dueno_usd": [17, 23]}
+ "precio": {
+  "entrada_usd": 19,
+  "prueba_ab_usd": 23,
+  "rango_aprobado_por_dueno_usd": [
+   17,
+   23
+  ]
+ }
 }
