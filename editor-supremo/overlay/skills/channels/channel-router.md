@@ -53,6 +53,29 @@ the files; never delete undelivered work.
 Before every stage, re-read the bible sections that the stage depends on
 (listed in each bible under "Stage checklist").
 
+### Step 5 — Approval mode (how often to stop for the user)
+Read `~/.config/editor-supremo/modo-aprobacion.txt` at the start of every project. It holds one word:
+`completo` or `3-pausas`. A missing file means `completo`.
+
+- **`completo`** (default): stop for the user's OK at every stage and sub-stage whose
+  `human_approval_default` is true (9 stops per video).
+- **`3-pausas`**: stop ONLY at these three points:
+  1. `proposal`: the plan, the cost and, on a channel's first video, the voice lock;
+  2. the end of `compose`, after `render_audit` is PASS: show the final video and the audit summary;
+  3. `publish`/upload: upload only after the user says "sube a YouTube".
+
+  Every other stage (`script`, `scene_plan`, `assets`, `edit`, `storyboard_audit`) continues on its
+  own **only when its success criteria pass**, and still writes its checkpoint. Even in this mode,
+  STOP and ask the user when:
+  - an audit is still below PASS after 3 fix rounds;
+  - the cost would exceed what the approved proposal says, or a paid API not in the proposal is needed;
+  - the bible does not define something that matters;
+  - the GPU pod must be started and the Runpod tools are not available.
+
+The user switches the mode by saying "activa modo 3 pausas" or "activa modo completo". Write the word to
+that file (`mkdir -p ~/.config/editor-supremo` first), then confirm in one Spanish line. The mode never
+skips an audit and never uploads without "sube a YouTube".
+
 ## Precedence (when two instructions disagree)
 
 1. The user's explicit instruction **in the current message**, but only if it does not violate an

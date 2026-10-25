@@ -12,6 +12,9 @@ over a script "for my channel".
 2. Read the channel's bible: `channels/<channel>/CHANNEL_BIBLE.md` (in full).
 3. Use ONLY the pipeline `channel-documentary`.
 
+**Approval mode:** `completo` (stop at every stage, the default) or `3-pausas` (proposal, final
+video, upload). The rules are in `skills/channels/channel-router.md`, Step 5.
+
 **Non-negotiable:**
 - One channel per project. Never mix bibles, playbooks, voices or prompts.
 - The user's script is used word for word. Never rewrite narration.

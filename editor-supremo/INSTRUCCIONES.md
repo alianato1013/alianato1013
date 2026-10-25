@@ -86,6 +86,23 @@ Si no dices el canal, **el agente tiene que preguntarte** (está prohibido que l
 
 **La primera vez en cada canal** te pedirá elegir la voz entre 2–3 muestras. Queda guardada en `channels/<canal>/voice.lock.json` y **nunca cambia**.
 
+### Modo de 3 pausas (cuando ya confíes en el estilo)
+
+La tabla de arriba es el **modo completo**, que viene por defecto. Cuando quieras menos interrupciones, escribe **"activa modo 3 pausas"**. Desde entonces el agente solo se detiene en 3 momentos:
+1. la **propuesta**;
+2. el **video final**, ya auditado;
+3. **"sube a YouTube"**.
+
+Las demás etapas siguen solas, pero solo si pasan sus revisiones. Las dos auditorías siguen siendo obligatorias.
+
+**Aun en este modo, el agente te pregunta cuando:**
+- una auditoría no llega a PASA después de 3 intentos de arreglo;
+- algo costaría más de lo aprobado en la propuesta;
+- la biblia no define algo importante;
+- hay que encender la GPU y no tiene el plugin de Runpod.
+
+Para volver al modo completo, escribe **"activa modo completo"**. Recomendación: usa el modo completo en los 2 o 3 primeros videos de cada canal.
+
 ---
 
 ## 4. Cómo escribir el guion para cada canal (los marcadores)
